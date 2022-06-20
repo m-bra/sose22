@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<script src="jquery.js"></script>
+<meta charset="UTF-8">
+
+
+<title>DAIS</title>
+					
+
+<link rel="stylesheet" href="/style.css">
+
+<p><iframe src="/DAIS/notes0.html" id="notes0" style="height: 1100px;" width="100%"> </iframe></p>
+
+<div class="scope">
+    <p>Data Mining as an iterative process.</p>
+    <p>
+        Domain-specific knowledge and experience are usually necessary 
+in order to come up with a meaningful problem statement. Unfortunately, 
+many application studies tend to focus on the data-mining technique at 
+the expense of a clear
+        problem statement.
+    </p>
+
+    <div class="scope">State the problem and formulate the hypothesis.</div>
+    <div class="scope">Collect the data.</div>
+
+    <details class="scope" open="">
+        <summary> Preprocess the data: Outliers, Scaling, encoding, selecting features, dimensionality reduction, etc.</summary>
+
+        <div class="scope">
+            traditional(structured)/nontraditional(semi-structured/unstructured) data
+        </div>
+
+        <details class="scope">
+            <summary> <span>There are a number of indicators of data 
+quality that have to be taken care of in the preprocessing phase of a 
+data-mining process:</span> </summary>
+            <div class="scope">
+                The data should be accurate. The analyst has to check that the name is spelled<br role="presentation">
+                correctly, the code is in a given range, the value is complete, and so on.<br>
+            </div>
+            <div class="scope">
+                The data should be stored according to data type. the analyst must ensure that<br role="presentation">
+                the numerical value is not presented in character form, that integers are not in<br role="presentation">
+                the form of real numbers, and so on.<br>
+            </div>
+            <div class="scope">
+                The data should have integrity. Updates should not be lost because of conflicts<br>
+                among different users; robust backup and recovery procedures should be implemented <br>
+                if they are not already part of the Data Base Management System (DBMS).<br>
+            </div>
+            <div class="scope">
+                The data should be consistent. The form and the content should be the same<br>
+                after integration of large data sets from different sources.<br>
+            </div>
+            <div class="scope">
+                The data should not be redundant. In practice, redundant data should be mini-<br>
+                mized, and reasoned duplication should be controlled, or duplicated records<br>
+                should be eliminated.<br>
+            </div>
+            <div class="scope">
+                The data should be timely. The time component of data should be recognized<br>
+                explicitly from the data or implicitly from the manner of its organization.<br>
+            </div>
+            <div class="scope">
+                The data should be well understood. Naming standards are a necessary but not<br>
+                the only condition for data to be well understood. The user should know that<br>
+                the data correspond to an established domain.<br>
+            </div>
+            <div class="scope">
+                The data set should be complete. Missing data, which occurs in reality, should<br>
+                be minimized. Missing data could reduce the quality of a global model. On the<br>
+                other hand, some data-mining techniques are robust enough to support analyses<br>
+                of data sets with missing values.<br>
+            </div>
+        </details>
+
+        <details class="scope">
+            <summary>Transformation of Raw Data</summary><br>
+            <span>
+                <div class="scope">
+                    <span>
+                        <div class="scope">
+                            <span>
+                                <span>
+                                    <span>
+                                        A priori, one should expect to 
+find missing values, distortions, misrecording, inadequate sampling, and
+ so on in these<br>
+                                        initial data sets. Raw data that
+ do not appear to show any of these problems should immediately arouse 
+suspicion.
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="scope">
+                            <span>
+                                <span>
+                                    <span><span>The lesson to be learned is that a major role remains for human insight while defining the problem.</span></span>
+                                </span>
+                            </span>
+                        </div>
+                    </span>
+                </div>
+            </span>
+            <span>
+                <div class="scope">
+                    Normalizations<br>
+                    <span>
+                        <div class="scope">
+                            Decimal Scaling
+                        </div>
+                        <div class="scope">Min-Max Normalization<br></div>
+                    </span>
+                </div>
+            </span>
+            <span>
+                <div class="scope">
+                    Data Smoothing and <span><span>reducing number of distinct values</span></span>
+                </div>
+                <div class="scope">
+                    <span><span>Differences and Ratios</span></span><br>
+                </div>
+            </span>
+        </details>
+
+        <details class="scope" open="">
+            <summary>Missing Data</summary>
+            <div class="scope">
+                replace a missing value...<br>
+                <div class="scope">with a single global constant</div>
+                <div class="scope">with its feature mean</div>
+                <div class="scope">with its feature mean for the given class<br></div>
+                this <i>will</i> introduce bias
+            </div>
+            <div class="scope">
+                <span style="font-size: 9px;"> or</span><br>
+                treat the value as "don't care", <br>
+                extending the sample to a set of artificial samples<br>
+            </div>
+            <div class="scope">
+                It is best to generate multiple solutions<br>
+                of data mining with and without features that have missing values and then analyze<br>
+                and interpret them.<br>
+            </div>
+        </details>
+
+        <details class="scope">
+            <summary>outlier analysis <span style="font-size: 9px;">= outlier detection = novelty detection = anomaly detection = noise detection = deviation detection = exception mining</span></summary>
+            <div class="scope">Their detection can identify system faults and fraud before they escalate with potentially catastrophic consequences.</div>
+            <div class="scope">
+                Many data-mining techniques may not work well in the 
+presence of outliers. Outliers may introduce skewed distributions or 
+complexity into models of the data, which may make it difficult, if not 
+impossible, to fit an accurate
+                model.
+            </div>
+            <div class="scope">
+                The data-mining analyst has to be very careful in the automatic elimination of<br>
+                outliers because if the data are correct, that could result in the loss of important hidden<br>
+                information.
+            </div>
+            <div class="scope">two main steps: (1) Build a profile of 
+the “normal” behavior, and (2) use the “normal” profile to detect 
+outliers. The profile can be patterns or summary statistics for the 
+overall population.</div>
+
+            <div class="scope">
+                main types of outlier detection schemes are<br>
+                <span>
+                    <details class="scope">
+                        <summary> graphical or visualization techniques,<br></summary>
+                        Boxplot (1-D), Scatter plot (2-D), and Spin plot (3-D),
+                    </details>
+                </span>
+                <span>
+                    <details class="scope">
+                        <summary> statistical-based techniques,</summary>• Uni- and multivariate methods<br>
+                        <span>
+                            <span>
+                                <span>
+                                    <span>• </span><span>often unsuitable </span><br>
+                                    &nbsp; <span><span>• </span></span>for high-dimensional data sets and <br>
+                                    &nbsp; <span><span>• </span></span>for arbitrary data sets without prior knowledge of the underlying data distribution.
+                                </span>
+                            </span>
+                        </span>
+                        <br>
+                        • • either assume a known underlying distribution of the observations or, <br>
+                        &nbsp; <span><span>• </span></span>at least, based on statistical estimates of unknown distribution parameters.<br>
+                        <span>
+                            <span><span>• </span></span>
+                        </span>
+                        When the database is contaminated with outliers,
+ sample mean and sample variance may deviate and significantly <br>
+                        &nbsp; affect the outlier-detection performance<br>
+                        &nbsp; • Age = { &#8722;3 56 23 39 156 52 41 22 9 28 139 31 55 20 67 37 11 55 45 37 }<br>
+                        &nbsp;&nbsp;&nbsp; Then potential outliers are outside the range [ &#8722;54.1, 131.2] <br>
+
+                        <br>
+                    </details>
+
+                    <details class="scope">
+                        <summary> distance-based methods </summary>
+
+                        Mahalanobis distance measure depends on estimated parameters of the multi-variate distribution.
+                        <br>
+                        Sample covariance matrix.<br>
+                        <img src="/.img//zIjre.png" style="width: 264.2px; height: 63.1783px;">
+                        <br>
+
+                        <img src="/.img//xhemR.png" style="width: 261.2px; height: 75.2832px;">
+
+                        <hr>
+                        p,d parameter method
+                    </details>
+
+                    <details>
+                        <summary> Model-based methods </summary>
+
+                        <div class="scope">
+                            sequential-exception technique <br>
+
+                            â€¢ non-optimal, but linear solution to following NP-hard problem: <br>
+                            • choose the smallest exception set E in the
+ sample set S such that F(S\E) for some dissimilarity function F (such 
+as variance) will be maximally reduced. <br>
+                            • implemented by removing at each iteration that element which reduces F the most
+                        </div>
+                    </details>
+
+                    <span>Balanced and Iterative Reducing and Clustering Using Hierarchies (BIRCH) </span>
+
+                    <br>
+
+                    <span> and Density-Based Spatial Clustering of Applications with Noise (DBSCAN), </span>
+
+                    <br>
+
+                    <span> k nearest neighbor (kNN) </span>
+
+                    <br>
+
+                    <span> as powerful tools for outliers’ detection</span>
+                </span>
+            </div>
+        </details>
+
+        <details class="scope" open="">
+            <summary>Data reduction </summary>
+
+            <pre>• Influence on:
+  • Computing Time
+  • Predictive/Descriptive Accuracy
+    summarize and generalize data into the model
+    by choosing relevant data and reducing redundant data
+  • Representation of the Data-Mining Model
+    The simplicity of representation, obtained usually with data reduction, often implies that a model 
+    can be better understood.
+
+            </pre>
+
+            <details class="scope">
+                <summary>Desired properties of data-reduction algorithms:</summary>
+                (not included in slides)
+            </details>
+
+            <details class="scope" open="">
+                <summary>Feature/Dimensionality reduction</summary> • Of irrelevant, correlated and redundant data<br>
+                • Supervised algorithms need output class labels, unsupervised ones don't<br>
+
+                <details class="scope" open="">
+                    <summary><b>transform/extract</b> the existing features to a new reduced set of features </summary>
+
+                    
+						
+						<div class="scope">
+                        • linear                    <br>
+                        • principal components
+                    </div>
+					
+					
+
+                    <div class="scope">
+                        non-linear
+                    </div>
+                </details>
+
+                <details class="scope" open="">
+                    <summary><b>select</b> a subset of the existing features<br></summary>
+                    <details open="">
+                        <summary></summary>
+                        this scope follows slides, not lecture
+                    </details>
+                    • univariate methods • filter model
+
+                    <div class="scope">
+                        preprocessing activity, without trying to 
+optimize the performance of any specific data-mining technique directly<br>
+                        <img src="/.img//kjqyI.png" width="60%">
+                    </div>
+
+                    <div class="scope">
+                        wrapper model<br>
+                        <img src="/.img//fzspi.png" width="50%">
+                    </div>
+
+                    • embedded methods<br>
+                </details>
+
+                <details>
+                    <summary> </summary>
+                    <img src="/.img//6USmx.png" width="60%">
+                </details>
+            </details>
+        </details>
+    </details>
+
+    <div class="scope">Estimate the model.</div>
+    <div class="scope">Interpret the model and draw conclusions</div>
+</div>
+
+<div class="scope">
+    Feature Types<br>
+    <div class="scope">-&gt; slides<br></div>
+    <div class="scope">
+        <span><div class="scope">static data</div></span>
+        <details class="scope">
+            <summary> <span>dynamic/temporal data</span><br> </summary>
+            <div class="scope">
+                classical univariate time-series problem,<br>
+                where it is expected that the value of the variable X at a given time can be related to previous values.<br>
+                <span>
+                    <div class="scope">
+                        <span style="font-size: 9px;">One of the most important steps in the preprocessing of raw, time-dependent data is the specification of a </span><br>
+                        window/time lag: the number of previous values that influence prediction<br>
+                        <span>
+                            <div class="scope"><img style="width: 251.159px; height: 153.183px;" src="/.img//2ckDW.png"><br></div>
+                        </span>
+                        .
+                    </div>
+                    <div class="scope">
+                        In practice, many older values of a feature may be historical relics that are no<br>
+                        longer relevant and less reliable and should not be used for analysis.
+                    </div>
+                    <details class="scope">
+                        <summary><img style="width: 171.2px; height: 53.1116px;" src="/.img//lw9Bf.png"> | e.g. 200 days MA for the DOW or NASDAQ stock market.<br> </summary>
+                        <div class="scope">The objective is to smooth neighboring time points by an MA to reduce the random variation and noise components</div>
+                    </details>
+                </span>
+                <span>
+                    <div class="scope">EMA: exponential moving average</div>
+                    <div class="scope"><font color="#FF0000">skip from p.40 until section 2.6</font><br></div>
+                </span>
+            </div>
+        </details>
+    </div>
+    <div class="scope">
+        high dimensional data<br>
+        <div class="scope">effect on density</div>
+        <div class="scope">large radius needed to enclose neighbors</div>
+        <div class="scope">
+            Almost every point is closer to an edge than to another sample point in a high-<br>
+            dimensional space.
+        </div>
+        <div class="scope">Almost every point is an outlier.<br></div>
+    </div>
+</div>
+
+<br>
+<p></p>
+<p>Solve Exercise "DecisionTree.notebook" from 12. May<br></p>
+
+Continue with "An additional single-dimensional method is Grubbs’ method"@p.44<br>
+<br>
+
+<a href="http://0.0.0.0:8081/L05.html">L05.html</a>
+</div>
+

@@ -1,0 +1,10 @@
+Antwort 01:    5
+Antwort 02:   28
+Antwort 03:   56
+Antwort 04:   89
+Antwort 05:  145
+Antwort 06:    1
+Antwort 07:    2
+Antwort 08:    7
+Antwort 09:   41 (da x=4)
+Antwort 10:   51 (da x=4)

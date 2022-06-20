@@ -1,0 +1,117 @@
+<title>ES</title>
+
+<style>
+    .scope,
+    pre {
+        background-color: white;
+        border-style: solid;
+        border-width: thin;
+        padding: 3px 3px;
+        margin: 0px 0 4px;
+        font-family: "Courier New";
+    }
+</style>
+
+<pre>Moodle, TAMS
+Vorlesung folgt dem Buch (...)
+</pre>
+<hr>
+<pre>VSM=Virtual System Modelling
+
+Hardwareentwurf von FPGA mit Sprache wie VHDL
+
+Cyber-physical systems are engineered systems that are built from and depend upon the synergy of computational and physical compnents
+  * smart electric grid, smart transportation, smart buildings, smart medical technologies, next-generation air traffic management, and advanced manufacturing
+
+Ubiquitous computing: Information anytime, anywhere. 
+
+(Auch Gebäudetechnik / Structural safety)
+
+Einige genannten Eigenschaften von ES: Sicherheit, Echtzeit
+
+CPS/ES must be dependable.
+Reliability R(t)
+Maintainability M(d)
+
+Timeliness is more important than fast performance in real-time systems.
+
+reactive system. dedicated systems with dedicated user interfaces.
+
+Iterative design (nichts prüfungsrelevant)
+
+“The lack of timing in the core abstraction (of computer
+science) is a flaw, from the perspective of embedded
+software” 
+
+in PC, time measurement using clock frequency not possible. frequenz wird mitunter runtergetaktet. use of HW-timer
+
+Models of computation define: Components and execution model for computations for each component and Communication model for exchange of information between them<br>
+</pre>
+
+<hr>
+<pre>COMMUNICATING FINITE STATE MACHINES<br>
+    timed automata<br>
+    <br>
+    <img style="width: 539.803px; height: 319.883px;" src="http://0.0.0.0:80/.img/ZQs5j.png"><br>
+    shared memory only applies to one machine with multiple components<br>
+    two distant machines must communicate async/sync message parsing<br>
+    <br>
+    StateChart. Basic state. (OR-/AND-)Superstate. Substate. Concurrency.<br>
+    StateMate semantics, which reflects model of clocked hardware. Other impls of StateChart lead to different results.<br>
+    Determinate behavior for StateMate semantics if<br>
+    transition conflicts are resolved and no other sources of<br>
+    undefined behavior exist<br>
+    <br>
+    "Abstraction of delays" ???<br>
+    <br>
+    Folie 37<br>
+    Entscheidend: Statecharts, hierarchien, or-and, nebenlaeufigkeiten, statemate. <br>
+    synchro/asynchrone sprachen: grundidee<br>
+</pre>
+<p></p>
+<p><span></span></p>
+<div class="scope"><img style="width: 428.826px; height: 319.767px;" src="http://0.0.0.0:80/.img/twn6P.png"></div>
+<div class="scope">
+    Lektüre<br>
+    <span>
+        <div class="scope">Aspekte der Verlässlichkeit eines Cyber-Physical-Systems in Seiten 9,10</div>
+        <div class="scope">Reelle Größen und konvergierte unendliche Ereignisse<span style="font-size: 9px;">(Zeno-Effekt)</span> können mit digitalen Systemen nur approximiert werden</div>
+        <div class="scope">adaptive Abtastung</div>
+        <div class="scope">
+            Traditionelle sequentielle Programmiersprachen sind nicht der beste Weg,<br>
+            nebenläufige, zeitbehaftete Systeme zu beschreiben.
+        </div>
+        <details class="scope">
+            <summary>&gt; Eingebettete Systeme müssen effizient mit Ressourcen umgehen.<br>
+            <span>
+                </span></summary><span><div class="scope">
+                    Elektrische Energie<br>
+                    <span>
+                        <div class="scope">„(elektrische) Leistung wird als die wichtigste Randbedingung bei eingebetteten Systemen betrachtet<br></div>
+                    </span>
+                </div>
+            </span>
+            <span>
+                <div class="scope">Laufzeit-Effizienz</div>
+                <div class="scope">Codegröße</div>
+                <div class="scope">Gewicht</div>
+                <div class="scope">
+                    Kosten<br>
+                    <i>&nbsp;</i>*<i> </i>Wir sollten also die Anforderungen mit der geringsten Menge an Hardwareressourcen und Energie erfüllen können.<br>
+                    &nbsp;* Die beste Energieeffizienz würde bei einer Abbildung der Spezifikationen auf<br>
+                    &nbsp;&nbsp; Hardware erzielt werden. Hardwareimplementierungen sind aber sehr teuer und<br>
+                    &nbsp;&nbsp; erfordern eine lange Entwurfsdauer.<br>
+        </div></span></details></span><span>
+        <div class="scope">Ein reaktives System ist ein System, das sich in<br>ständiger Interaktion mit seiner Umgebung befindet und mit einer Geschwindig-<br>keit reagiert, die durch diese Umgebung vorgegeben wird.</div><div class="scope"><span style="font-size: 9px;">Die Ausführung anderweitiger Programme auf ES/CPS, bsp. Tabellenkalkulation in einem Zugsteuerungssystem, ist nur möglich, wenn es ungenutzte Ressourcen, wie z.B. Speicher, gibt.</span><br>In einem effizienten System sollten aber keine ungenutzten Ressourcen vorkommen.<br><br>Die meisten eingebetteten Systeme verwenden weder Tastaturen, Mäuse noch<br>große Bildschirme für ihre Benutzerschnittstellen. Stattdessen existiert eine de-<br>dizierte Benutzerschnittstelle, bestehend aus Schaltern, Lenkrädern, Pedalen<br>usw.</div><div class="scope">Entwurf<br><img style="width: 546.628px; height: 236.6px;" src="http://0.0.0.0:80/.img/kNq2n.png"><br><img style="width: 491.6px; height: 161.365px;" src="http://0.0.0.0:80/.img/SNpMz.png"><br><img style="width: 464.6px; height: 280.194px;" src="http://0.0.0.0:80/.img/LBxoI.png"><br>Synthese ist der Vorgang, die Beschreibung<br>eines Systems in Form von Komponenten auf einer niederen Abstraktionsebene aus<br>einer Beschreibung des erwarteten Verhaltens auf einer höheren Ebene erzeugen zu<br>lassen.</div><div class="scope">Kapitel Spezifikation und Modellierung<br><span><div class="scope">&gt; <br>
+</div></span><br></div><div class="scope"><b><font color="#FF0000">weiter S.33 erste Zeile</font><br></b>
+        </div></span><span>
+    </span>
+    </div>
+
+<p></p>
+<br>
+<p></p>
+<p><br></p>
+<br>
+<br>
+<p><br></p>

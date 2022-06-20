@@ -1,0 +1,12 @@
+.scope {
+          background-color: white;
+          border-style: solid;
+          border-width: thin;
+          padding: 7px 7px;
+          margin: 0px 0 7px;
+          font-family: "Courier New";
+}
+
+img {
+	      vertical-align: middle;
+}

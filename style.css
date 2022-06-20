@@ -1,0 +1,31 @@
+* {
+    font-family: "droid-sans-mono", "Courier New";
+    font-size: 14px;
+    line-height: 1.1;
+}
+
+.scope {
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 4px;
+    padding: 5px 5px;
+    margin: 0px 0 5px;
+}
+
+.tab { margin-left: 20px; }
+
+
+img {
+    vertical-align: middle;
+}
+
+@font-face {
+  font-family: 'droid-sans-mono';
+  src: URL('DroidSansMono.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'lmmath-regular';
+  src: URL('lmmath-regular.ttf') format('truetype');
+}

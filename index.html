@@ -1,0 +1,70 @@
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title> sose22 </title>
+
+<style>
+	* {
+		font-family: "Courier New";
+	}
+
+	th {
+	  text-align: left;
+	}
+
+	td {
+	  padding-left: 10px;
+	  padding-right: 10px;
+	}
+</style>
+
+<pre><b><a href="DAIS/index.html">DAIS</a></b> 9LP
+<b><a href="DMSV/index.html">DMSV</a></b> 9LP; Moodle
+<b><a href="ES.html">ES  </a></b> 9LP
+<b>FP</b>   6LP
+</pre>
+
+<pre><b>MO</b>
+[14:15-15:45] DMSV-Üb
+_14:15-15:45_ DAIS-VL
+_15:45-17:45_ ES-Vorb
+
+<b>DI</b> 
+_12:15-13:45_ ES---VL 
+_14:15-15:45_ ES---Üb 
+
+<b>MI</b> 
+_10:15-11:45_ DAIS-VL 
+_14:15-15:45_ DMSV-VL
+
+<b>DO</b> 
+_10:15-11:45_ DMSV-VL
+[Abgabe20:00] DAIS-Üb 
+
+<b>FR</b> 
+_12:15-13:45_ ES---VL
+[14:00-16:00] DAIS-Üb<br>_16:00-19:00_ DMSV-Vorb
+
+</pre>
+
+<p> FP ab 10. Juni </p>
+
+<script>
+	[].forEach.call(document.querySelectorAll('code'), function($code) {
+	    var lines = $code.textContent.split('\n');
+	
+	    if (lines[0] === '')
+	    {
+	        lines.shift()
+	    }
+	
+	    var matches;
+	    var indentation = (matches = /^[\s\t]+/.exec(lines[0])) !== null ? matches[0] : null;
+	    if (!!indentation) {
+	        lines = lines.map(function(line) {
+	            line = line.replace(indentation, '')
+	            return line.replace(/\t/g, '    ')
+	        });
+	
+	        $code.textContent = lines.join('\n').trim();
+	    }
+	});
+</script>

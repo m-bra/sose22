@@ -1,0 +1,318 @@
+<!doctype html>
+
+<script src="jquery.js"></script>
+
+<span id="rect" style="
+		border: dashed;
+		border-width: 2px;
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		left: 100px;
+		top: 100px;
+">
+
+</span>
+
+<div id=selection>
+	<a href=example.com> THIS IS A SENTENCE. </a>
+	<b> <i> THIS IS ANOTHER SENTENCE. </i> </b>
+</div>
+
+<script>
+	'use strict';
+
+	var spacesPerTab = 4;
+	
+	$( document ).ready(() => {
+		var topmost_selection = $( "#selection ")[0];
+		var selected_node = $( "#selection" )[0];
+
+		var original_display = selected_node.style.display;
+		var deleted_nodes = [];
+		
+		$( document ).bind("keydown", (event) => {
+			if (!$( "#htmledit" )[0])
+			{
+				let next_node;
+				if (event.keyCode == 37/*left*/ && !selected_node.isSameNode(topmost_selection))
+					next_node = selected_node.previousElementSibling;
+				if (event.keyCode == 39/*right*/ && !selected_node.isSameNode(topmost_selection))
+					next_node = selected_node.nextElementSibling;
+				if (event.keyCode == 38/*up*/ && !selected_node.isSameNode(topmost_selection))
+				{
+					selected_node.parentElement.lastUserSelectedElement = selected_node;
+					next_node = selected_node.parentElement;
+				}
+				if (event.keyCode == 40/*down*/)
+					next_node = selected_node.lastUserSelectedElement || selected_node.firstElementChild;
+				if (event.keyCode >= 37 && event.keyCode <= 40 /*left, right, up, down*/) {
+					event.preventDefault();
+					//selected_node.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+				}
+
+				if (event.code === 'Space') {
+				    event.preventDefault();
+                    selected_node.click();
+				}
+				
+				if (next_node)
+				{
+					selected_node = next_node;
+					repaint_selected_node();
+					selected_node.focus();
+				}
+
+				if (!selected_node.isSameNode(topmost_selection) && !event.ctrlKey && (
+				           event.keyCode == 13/*enter*/
+				        || event.key      == "a"
+				        || event.key      == "i"))
+				{
+					event.preventDefault();
+					let level = Math.max(0, countElementLevel(selected_node)-1);
+					console.log(selected_node);
+					selected_node.insertAdjacentHTML(
+					    event.key == "i" ? "beforebegin" : "afterend", `
+						<div id="htmledit">
+						   	<textarea 
+						   		style="
+						   			width: 100%;
+						   			height: 100%;
+						   			border: solid;
+						   			outline: none;
+						   			overflow: hidden;
+						   			resize: none;"   
+						   		oninput="
+						   		    $('#htmledit')[0].style.height = $('#htmledit textarea')[0].scrollHeight + 'px';
+						   		">` 
+						   			+ `${ (event.keyCode == 13/*enter*/)
+						   				  ? unindent(tabtospace(selected_node.outerHTML.trim()), level) : ""
+						   			}` + 
+						   	`</textarea>
+						</div>
+					`);
+					if (event.keyCode == 13/*enter*/)
+						selected_node.remove();
+					selected_node = null;
+					repaint_selected_node();
+
+					function try_htmledit(count) {
+						if (!$( "#htmledit" )[0]) {
+							if (count < 60)
+								setTimeout(try_htmledit, 100, count + 1);
+							else
+								console.log("warning: waiting for #htmledit timed out"); 
+							return;
+						}
+						$( "#htmledit textarea" ).focus();
+						$( "#htmledit textarea" )[0].dispatchEvent(new Event('input'));
+						$( "#htmledit textarea" ).on( "keydown", (event) => {
+							var keydown1 = true;//!keydown1;
+							if (event.ctrlKey && event.keyCode == 13/*enter*/ && keydown1) {
+								event.preventDefault();
+	
+								let elm = document.createElement("div");
+								elm.innerHTML = indent($( "#htmledit textarea" ).val().trim(), level).trim();
+	
+								function prepareInsert(node) {
+									if (node.nodeType === Node.TEXT_NODE) {
+										let element = document.createElement("span");
+										element.insertBefore(node.cloneNode(true), null);
+										return element;
+								    }
+								    return node.cloneNode(true);
+								}
+	
+								htmledit = $( "#htmledit" )[0];
+								selected_node = $( "#htmledit" )[0].previousElementSibling;							
+								for (let i = 0; i < elm.childNodes.length; ++i) { selected_node = 
+									htmledit.parentNode
+											.insertBefore(prepareInsert(elm.childNodes[i]), htmledit) 
+								||   selected_node; }
+								if (!selected_node)
+									selected_node = $( "#htmledit" )[0].parentElement || topmost_selection;
+	
+								htmledit.parentNode.removeChild(htmledit);
+								repaint_selected_node();
+							}
+						});
+					}
+					setTimeout(try_htmledit, 100, 0);
+				}
+				if (event.key == "d" && !selected_node.isSameNode(topmost_selection))
+				{
+					let next_node = selected_node.nextElementSibling || selected_node.parentElement || topmost_selection;
+					deleted_nodes.push(selected_node);
+					selected_node.remove();
+					selected_node = next_node;
+					repaint_selected_node();
+				}
+				if (event.key == "p" && !selected_node.isSameNode(topmost_selection) && deleted_nodes.length >= 1)
+				{
+					selected_node.insertAdjacentElement("afterend", deleted_nodes[deleted_nodes.length - 1]);
+					deleted_nodes.pop();
+				}
+				if (event.ctrlKey && event.key == "s" && !$( '#htmledit' )[0])
+				{
+					event.preventDefault();
+					download_html($( '#selection' )[0].innerHTML);
+				}
+				if (event.ctrlKey && event.key == "o" && !$( '#htmledit' )[0])
+				{
+					event.preventDefault();
+					$('#file-input').click();
+				}
+			}
+			addEventListener("beforeunload", beforeUnloadListener, {capture: true});		
+		});
+
+		function countElementLevel(node) {
+			return countElementLevelUntil(node, topmost_selection);
+		}
+
+		function countElementLevelUntil(node, root) {
+			if (node.isSameNode(root)) {
+				return 0;
+			}
+			if (!node.parentElement)
+				return 0;
+			else
+				return countElementLevelUntil(node.parentElement, root) + 1;
+		}
+
+		function indent(text, level) {
+			let newtext = "\n";
+			let i = 0;
+			for (let line of text.split('\n')) {
+				let locallevel = level;
+				console.log("D1");
+				if (i++ == 0)
+					locallevel = 0;
+				newtext = newtext + " ".repeat(locallevel * 4) + line + "\n";
+			}
+			return newtext;
+		}
+
+		function unindent(text, level) {
+			let newtext = "";
+			for (let line of text.split('\n')) {					
+				let spaces = 0;
+				for (spaces = 0; spaces < level * 4; ++spaces) {
+				    if (line[spaces] == '\t')
+				    	console.log("Please remove tabs spaces in html document.");
+					if (line[spaces] != ' ') {
+						break;
+					}
+				}
+				newtext = newtext + line.substring(spaces) + "\n";
+			}
+			return newtext;
+		}
+
+		function tabtospace(text) {
+			return text.replace(/\t/g, ' '.repeat(spacesPerTab));
+		}
+
+		function getNodeBoundingClientRect(textNode) {
+		    let node = textNode;
+			if (node.getBoundingClientRect)
+				return node.getBoundingClientRect();
+		    
+		    var height = 0;
+		    if (document.createRange) {
+		        var range = document.createRange();
+		        range.selectNodeContents(textNode);
+		        if (range.getBoundingClientRect) {
+		            return range.getBoundingClientRect();
+		        }
+		    }
+		    return null;
+		}
+
+		function repaint_selected_node()
+		{
+			if (selected_node && getNodeBoundingClientRect(selected_node))
+			{
+				let pad = 3;
+				let selected_rect = getNodeBoundingClientRect(selected_node);
+				$( "#rect" )[0].style.display = original_display;
+				$( "#rect" )[0].style.left = window.pageXOffset + parseInt(selected_rect.left) - pad + "px";
+				$( "#rect" )[0].style.top = window.pageYOffset + parseInt(selected_rect.top) - pad + "px";
+				$( "#rect" )[0].style.width = parseInt(selected_rect.width) + pad + pad + "px";
+				$( "#rect" )[0].style.height = parseInt(selected_rect.height) + pad + pad + "px";
+			}
+			else
+			{
+				$( "#rect" )[0].style.display = "none";
+			}
+		}
+		repaint_selected_node();
+
+			// todo: export to library with parameter handleLoadedText
+			let handleLoadedText = (text) => {
+				$( '#selection' )[0].innerHTML = text; 
+				selected_node = $( '#selection' )[0]; 
+				repaint_selected_node();
+			};
+			
+		    let input_container = document.createElement('div');
+		    input_container.innerHTML = '<input type="file" id="file-input" style="display: none;" />';
+		    $( 'body' )[0].append(input_container);
+	
+			function handleFileSelect (e) {
+				var files = e.target.files;
+				if (files.length < 1) {
+					return;
+				}
+				var file = files[0];
+				var reader = new FileReader();
+				reader.onload = onFileLoaded;
+				reader.readAsText(file);
+			}
+		
+			function onFileLoaded (e) {
+				/*var match = /^data:(.*);base64,(.*)$/.exec(e.target.result);
+				if (match == null) {
+					throw 'Could not parse result'; // should not happen
+				}
+				var mimeType = match[1];
+				var content = match[2];*/
+				let content = e.target.result;
+				handleLoadedText(content);
+			}
+		
+			$(function () {
+				$('#file-input').change(handleFileSelect);
+			});
+			
+			// https://stackoverflow.com/a/30832210/2979958
+			function download(data, filename, type) {
+				var file = new Blob([data], {type: type});
+				if (window.navigator.msSaveOrOpenBlob) // IE10+
+					window.navigator.msSaveOrOpenBlob(file, filename);
+				else { // Others
+					var a = document.createElement("a"),
+						url = URL.createObjectURL(file);
+					a.href = url;
+					a.download = filename;
+					document.body.appendChild(a);
+					a.click();
+					setTimeout(function() {
+						document.body.removeChild(a);
+						window.URL.revokeObjectURL(url);  
+					}, 0); 
+				}
+			}
+		
+			function download_html(data) {
+				return download(data, "file.html", "text/html");
+			}
+			
+	});
+
+   	const beforeUnloadListener = (event) => {
+   		event.preventDefault();
+   		return event.returnValue = "Save data before exiting";
+   	};
+
+</script>

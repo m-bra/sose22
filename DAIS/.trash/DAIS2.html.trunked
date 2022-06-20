@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script src="DAIS2_files/jquery.js"></script>
+
+</head><body><span id="rect" style="border: 2px dashed; position: absolute; width: 1035px; height: 306px; left: 36px; top: 2273.4px; display: none;">
+
+</span>
+
+<div id="selection">
+
+<script src="DAIS2_files/jquery.js"></script>
+<meta charset="UTF-8">
+
+
+<title>DAIS</title>
+
+
+<link rel="stylesheet" href="DAIS2_files/style.css">
+
+<p><iframe src="DAIS2_files/notes0.html" id="notes0" style="height: 1100px;" width="100%"> </iframe></p>
+
+<div class="scope">
+<p>Data Mining as an iterative process.</p>
+<p>
+Domain-specific knowledge and experience are usually necessary
+in order to come up with a meaningful problem statement. Unfortunately,
+many application studies tend to focus on the data-mining technique at
+the expense of a clear
+problem statement.
+</p>
+
+<div class="scope">State the problem and formulate the hypothesis.</div>
+<div class="scope">Collect the data.</div>
+
+
+<details class="scope" open="">
+<summary> Preprocess the data: Outliers, Scaling, encoding, selecting features, dimensionality reduction, etc.</summary>
+
+<div class="scope">
+traditional(structured)/nontraditional(semi-structured/unstructured) data
+</div>
+
+<details class="scope">
+<summary> <span>There are a number of indicators of data
+quality that have to be taken care of in the preprocessing phase of a
+data-mining process:</span> </summary>
+<div class="scope">
+The data should be accurate. The analyst has to check that the name is spelled<br role="presentation">
+correctly, the code is in a given range, the value is complete, and so on.<br>
+</div>
+<div class="scope">
+The data should be stored according to data type. the analyst must ensure that<br role="presentation">
+the numerical value is not presented in character form, that integers are not in<br role="presentation">
+the form of real numbers, and so on.<br>
+</div>
+<div class="scope">
+The data should have integrity. Updates should not be lost because of conflicts<br>
+among different users; robust backup and recovery procedures should be implemented <br>
+if they are not already part of the Data Base Management System (DBMS).<br>
+</div>
+<div class="scope">
+The data should be consistent. The form and the content should be the same<br>
+after integration of large data sets from different sources.<br>
+</div>
+<div class="scope">
+The data should not be redundant. In practice, redundant data should be mini-<br>
+mized, and reasoned duplication should be controlled, or duplicated records<br>
+should be eliminated.<br>
+</div>
+<div class="scope">
+The data should be timely. The time component of data should be recognized<br>
+explicitly from the data or implicitly from the manner of its organization.<br>
+</div>
+<div class="scope">
+The data should be well understood. Naming standards are a necessary but not<br>
+the only condition for data to be well understood. The user should know that<br>
+the data correspond to an established domain.<br>
+</div>
+<div class="scope">
+The data set should be complete. Missing data, which occurs in reality, should<br>
+be minimized. Missing data could reduce the quality of a global model. On the<br>
+other hand, some data-mining techniques are robust enough to support analyses<br>
+of data sets with missing values.<br>
+</div>
+</details>
+
+<details class="scope">
+<summary>Transformation of Raw Data</summary><br>
+<span>
+<div class="scope">
+<span>
+<div class="scope">
+<span>
+<span>
+<span>
+A priori, one should expect to
+find missing values, distortions, misrecording, inadequate sampling, and
+so on in these<br>
+initial data sets. Raw data that
+do not appear to show any of these problems should immediately arouse
+suspicion.
+</span>
+</span>
+</span>
+</div>
+<div class="scope">
+<span>
+<span>
+<span><span>The lesson to be learned is that a major role remains for human insight while defining the problem.</span></span>
+</span>
+</span>
+</div>
+</span>
+</div>
+</span>
+<span>
+<div class="scope">
+Normalizations<br>
+<span>
+<div class="scope">
+Decimal Scaling
+</div>
+<div class="scope">Min-Max Normalization<br></div>
+</span>
+</div>
+</span>
+<span>
+<div class="scope">
+Data Smoothing and <span><span>reducing number of distinct values</span></span>
+</div>
+<div class="scope">
+<span><span>Differences and Ratios</span></span><br>
+</div>
+</span>
+</details>
+
+<details class="scope" open="">
+<summary>Missing Data</summary>
+<div class="scope">
+replace a missing value...<br>
+<div class="scope">with a single global constant</div>
+<div class="scope">with its feature mean</div>
+<div class="scope">with its feature mean for the given class<br></div>
+this <i>will</i> introduce bias
+</div>
+<div class="scope">
+<span style="font-size: 9px;"> or</span><br>
+treat the value as "don't care", <br>
+extending the sample to a set of artificial samples<br>
+</div>
+<div class="scope">
+It is best to generate multiple solutions<br>
+of data mining with and without features that have missing values and then analyze<br>
+and interpret them.<br>
+</div>
+</details>
+
+<details class="scope">
+<summary>outlier analysis <span style="font-size: 9px;">= outlier detection = novelty detection = anomaly detection = noise detection = deviation detection = exception mining</span></summary>
+<div class="scope">Their detection can identify system faults and fraud before they escalate with potentially catastrophic consequences.</div>
+<div class="scope">
+Many data-mining techniques may not work well in the
+presence of outliers. Outliers may introduce skewed distributions or
+complexity into models of the data, which may make it difficult, if not
+impossible, to fit an accurate
+model.
+</div>
+<div class="scope">
+The data-mining analyst has to be very careful in the automatic elimination of<br>
+outliers because if the data are correct, that could result in the loss of important hidden<br>
+information.
+</div>
+<div class="scope">two main steps: (1) Build a profile of
+the &#65533;normal&#65533; behavior, and (2) use the &#65533;normal&#65533; profile to detect
+outliers. The profile can be patterns or summary statistics for the
+overall population.</div>
+
+<div class="scope">
+main types of outlier detection schemes are<br>
+<span>
+<details class="scope">
+<summary> graphical or visualization techniques,<br></summary>
+Boxplot (1-D), Scatter plot (2-D), and Spin plot (3-D),
+</details>
+</span>
+<span>
+<details class="scope">
+<summary> statistical-based techniques,</summary>&#65533; Uni- and multivariate methods<br>
+<span>
+<span>
+<span>
+<span>&#65533; </span><span>often unsuitable </span><br>
+&nbsp; <span><span>&#65533; </span></span>for high-dimensional data sets and <br>
+&nbsp; <span><span>&#65533; </span></span>for arbitrary data sets without prior knowledge of the underlying data distribution.
+</span>
+</span>
+</span>
+<br>
+&#65533; &#65533; either assume a known underlying distribution of the observations or, <br>
+&nbsp; <span><span>&#65533; </span></span>at least, based on statistical estimates of unknown distribution parameters.<br>
+<span>
+<span><span>&#65533; </span></span>
+</span>
+When the database is contaminated with outliers,
+sample mean and sample variance may deviate and significantly <br>
+&nbsp; affect the outlier-detection performance<br>
+&nbsp; &#65533; Age = { &#8722;3 56 23 39 156 52 41 22 9 28 139 31 55 20 67 37 11 55 45 37 }<br>
+&nbsp;&nbsp;&nbsp; Then potential outliers are outside the range [ &#8722;54.1, 131.2] <br>
+
+<br>
+</details>
+
+<details class="scope">
+<summary> distance-based methods </summary>
+
+Mahalanobis distance measure depends on estimated parameters of the multi-variate distribution.
+<br>
+Sample covariance matrix.<br>
+<img src="DAIS2_files/zIjre.png" style="width: 264.2px; height: 63.1783px;">
+<br>
+
+<img src="DAIS2_files/xhemR.png" style="width: 261.2px; height: 75.2832px;">
+
+<hr>
+p,d parameter method
+</details>
+
+<details>
+<summary> Model-based methods </summary>
+
+<div class="scope">
+sequential-exception technique <br>
+
+• non-optimal, but linear solution to following NP-hard problem: <br>
+&#65533; choose the smallest exception set E in the
+sample set S such that F(S\E) for some dissimilarity function F (such
+as variance) will be maximally reduced. <br>
+&#65533; implemented by removing at each iteration that element which reduces F the most
+</div>
+</details>
+
+<span>Balanced and Iterative Reducing and Clustering Using Hierarchies (BIRCH) </span>
+
+<br>
+
+<span> and Density-Based Spatial Clustering of Applications with Noise (DBSCAN), </span>
+
+<br>
+
+<span> k nearest neighbor (kNN) </span>
+
+<br>
+
+<span> as powerful tools for outliers&#65533; detection</span>
+</span>
+</div>
+</details>
+
+<details class="scope" open="">
+<summary>Data reduction </summary>
+
+<pre>&#65533; Influence on:
+&#65533; Computing Time
+&#65533; Predictive/Descriptive Accuracy
+summarize and generalize data into the model
+by choosing relevant data and reducing redundant data
+&#65533; Representation of the Data-Mining Model
+The simplicity of representation, obtained usually with data reduction, often implies that a model
+can be better understood.
+
+</pre>
+
+<details class="scope">
+<summary>Desired properties of data-reduction algorithms:</summary>
+(not included in slides)
+</details>
+
+
+<details class="scope" open="">
+<summary>Feature/Dimensionality reduction</summary> &#65533; Of irrelevant, correlated and redundant data<br>
+&#65533; Supervised algorithms need output class labels, unsupervised ones don't<br>
+
+
+
+
+
+
+<details class="scope" open="">
+<summary><b>transform/extract</b> the existing features to a new reduced set of features </summary>
+
+
+<div class="scope">
+• linear                    <br>
+<div>
+  • <b>PCA</b> - principal components
+</div>
+<div>
+  • <b>FA</b> - Factor Analysis
+</div>
+<div>
+  • <b>ICA</b> - Independent Component Analysis
+</div>
+<div>
+  • <b>MDS</b> - Multidimensional Scaling <br>
+    • reduce dimensions while preserving distances <br>
+             • variants:<br>
+               • FastMap<br>
+               • Isomap<br>
+                 • graph-based, nonlinear<br>
+                 • geodesic distance<br>
+</div>
+</div>
+
+<div class="scope">
+non-linear
+</div>
+
+<div>
+optimize by choosing subset P randomly for feature selection, <br>
+then testing results on rest of data, repeating with bigger subset if necessary
+</div>
+</details>
+
+
+
+
+
+
+<details class="scope" open="">
+<summary><b>select</b> a subset of the existing features<br></summary>
+<details open="">
+<summary></summary>
+this scope follows slides, not lecture
+</details>
+&#65533; univariate methods &#65533; filter model
+
+<div class="scope">
+preprocessing activity, without trying to
+optimize the performance of any specific data-mining technique directly<br>
+<img src="DAIS2_files/kjqyI.png" width="60%">
+</div>
+
+<div class="scope">
+wrapper model<br>
+<img src="DAIS2_files/fzspi.png" width="50%">
+</div>
+
+&#65533; embedded methods<br>
+</details>
+
+<details>
+<summary> </summary>
+<img src="DAIS2_files/6USmx.png" width="60%">
+</details>
+</details>
+
+</details>
+</details>
+
+
+<div class="scope">Estimate the model.</div>
+<div class="scope">Interpret the model and draw conclusions</div>
+</div>
+
+<div class="scope">
+Feature Types<br>
+<div class="scope">-&gt; slides<br></div>
+<div class="scope">
+<span><div class="scope">static data</div></span>
+<details class="scope">
+<summary> <span>dynamic/temporal data</span><br> </summary>
+<div class="scope">
+classical univariate time-series problem,<br>
+where it is expected that the value of the variable X at a given time can be related to previous values.<br>
+<span>
+<div class="scope">
+<span style="font-size: 9px;">One of the most important steps in the preprocessing of raw, time-dependent data is the specification of a </span><br>
+window/time lag: the number of previous values that influence prediction<br>
+<span>
+<div class="scope"><img style="width: 251.159px; height: 153.183px;" src="DAIS2_files/2ckDW.png"><br></div>
+</span>
+.
+</div>
+<div class="scope">
+In practice, many older values of a feature may be historical relics that are no<br>
+longer relevant and less reliable and should not be used for analysis.
+</div>
+<details class="scope">
+<summary><img style="width: 171.2px; height: 53.1116px;" src="DAIS2_files/lw9Bf.png"> | e.g. 200 days MA for the DOW or NASDAQ stock market.<br> </summary>
+<div class="scope">The objective is to smooth neighboring time points by an MA to reduce the random variation and noise components</div>
+</details>
+</span>
+<span>
+<div class="scope">EMA: exponential moving average</div>
+<div class="scope"><font color="#FF0000">skip from p.40 until section 2.6</font><br></div>
+</span>
+</div>
+</details>
+</div>
+<div class="scope">
+high dimensional data<br>
+<div class="scope">effect on density</div>
+<div class="scope">large radius needed to enclose neighbors</div>
+<div class="scope">
+Almost every point is closer to an edge than to another sample point in a high-<br>
+dimensional space.
+</div>
+<div class="scope">Almost every point is an outlier.<br></div>
+</div>
+</div>
+
+<br>
+<p></p>
+<p>Solve Exercise "DecisionTree.notebook" from 12. May<br></p>
+
+Continue with "An additional single-dimensional method is Grubbs&#65533; method"@p.44<br>
+<br>
+
+<a href="http://0.0.0.0:8081/L05.html">L05.html</a>
+
+
+</div>
+
+<script>
+'use strict';
+
+var spacesPerTab = 4;
+
+$( document ).ready(() => {
+var topmost_selection = $( "#selection ")[0];
+var selected_node = $( "#selection" )[0];
+
+var original_display = selected_node.style.display;
+var deleted_nodes = [];
+
+$( document ).bind("keydown", (event) => {
+if (!$( "#htmledit" )[0])
+{
+let next_node;
+if (event.keyCode == 37/*left*/ && !selected_node.isSameNode(topmost_selection))
+next_node = selected_node.previousElementSibling;
+if (event.keyCode == 39/*right*/ && !selected_node.isSameNode(topmost_selection))
+next_node = selected_node.nextElementSibling;
+if (event.keyCode == 38/*up*/ && !selected_node.isSameNode(topmost_selection))
+{
+selected_node.parentElement.lastUserSelectedElement = selected_node;
+next_node = selected_node.parentElement;
+}
+if (event.keyCode == 40/*down*/)
+next_node = selected_node.lastUserSelectedElement || selected_node.firstElementChild;
+if (event.keyCode >= 37 && event.keyCode <= 40 /*left, right, up, down*/) {
+event.preventDefault();
+//selected_node.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+repaint_selected_node();
+}
+
+if (next_node)
+{
+selected_node = next_node;
+repaint_selected_node();
+}
+
+if (!selected_node.isSameNode(topmost_selection) && !event.ctrlKey && (
+event.keyCode == 13/*enter*/
+|| event.key      == "a"
+|| event.key      == "i"))
+{
+event.preventDefault();
+let level = Math.max(0, countElementLevel(selected_node)-1);
+console.log(selected_node);
+selected_node.insertAdjacentHTML(
+event.key == "i" ? "beforebegin" : "afterend", `
+<div id="htmledit">
+<textarea
+style="
+width: 100%;
+height: 100%;
+border: solid;
+outline: none;
+overflow: hidden;
+resize: none;"
+oninput="
+$('#htmledit')[0].style.height = $('#htmledit textarea')[0].scrollHeight + 'px';
+">`
++ `${ (event.keyCode == 13/*enter*/)
+? unindent(tabtospace(selected_node.outerHTML.trim()), level) : ""
+}` +
+`</textarea>
+</div>
+`);
+if (event.keyCode == 13/*enter*/)
+selected_node.remove();
+selected_node = null;
+repaint_selected_node();
+
+function try_htmledit(count) {
+if (!$( "#htmledit" )[0]) {
+if (count < 60)
+setTimeout(try_htmledit, 100, count + 1);
+else
+console.log("warning: waiting for #htmledit timed out");
+return;
+}
+$( "#htmledit textarea" ).focus();
+$( "#htmledit textarea" )[0].dispatchEvent(new Event('input'));
+$( "#htmledit textarea" ).on( "keydown", (event) => {
+var keydown1 = true;//!keydown1;
+if (event.ctrlKey && event.keyCode == 13/*enter*/ && keydown1) {
+event.preventDefault();
+
+let elm = document.createElement("div");
+elm.innerHTML = indent($( "#htmledit textarea" ).val().trim(), level).trim();
+
+function prepareInsert(node) {
+if (node.nodeType === Node.TEXT_NODE) {
+let element = document.createElement("span");
+element.insertBefore(node.cloneNode(true), null);
+return element;
+}
+return node.cloneNode(true);
+}
+
+htmledit = $( "#htmledit" )[0];
+selected_node = $( "#htmledit" )[0].previousElementSibling;
+for (let i = 0; i < elm.childNodes.length; ++i) { selected_node =
+htmledit.parentNode
+.insertBefore(prepareInsert(elm.childNodes[i]), htmledit)
+||   selected_node; }
+if (!selected_node)
+selected_node = $( "#htmledit" )[0].parentElement || topmost_selection;
+
+htmledit.parentNode.removeChild(htmledit);
+repaint_selected_node();
+}
+});
+}
+setTimeout(try_htmledit, 100, 0);
+}
+if (event.key == "d" && !selected_node.isSameNode(topmost_selection))
+{
+let next_node = selected_node.nextElementSibling || selected_node.parentElement || topmost_selection;
+deleted_nodes.push(selected_node);
+selected_node.remove();
+selected_node = next_node;
+repaint_selected_node();
+}
+if (event.key == "p" && !selected_node.isSameNode(topmost_selection) && deleted_nodes.length >= 1)
+{
+selected_node.insertAdjacentElement("afterend", deleted_nodes[deleted_nodes.length - 1]);
+deleted_nodes.pop();
+}
+if (event.ctrlKey && event.key == "s" && !$( '#htmledit' )[0])
+{
+event.preventDefault();
+download_html($( '#selection' )[0].innerHTML);
+}
+if (event.ctrlKey && event.key == "o" && !$( '#htmledit' )[0])
+{
+event.preventDefault();
+$('#file-input').click();
+}
+}
+addEventListener("beforeunload", beforeUnloadListener, {capture: true});
+});
+
+function countElementLevel(node) {
+return countElementLevelUntil(node, topmost_selection);
+}
+
+function countElementLevelUntil(node, root) {
+if (node.isSameNode(root)) {
+return 0;
+}
+if (!node.parentElement)
+return 0;
+else
+return countElementLevelUntil(node.parentElement, root) + 1;
+}
+
+function indent(text, level) {
+let newtext = "\n";
+let i = 0;
+for (let line of text.split('\n')) {
+let locallevel = level;
+console.log("D1");
+if (i++ == 0)
+locallevel = 0;
+newtext = newtext + " ".repeat(locallevel * 4) + line + "\n";
+}
+return newtext;
+}
+
+function unindent(text, level) {
+let newtext = "";
+for (let line of text.split('\n')) {
+let spaces = 0;
+for (spaces = 0; spaces < level * 4; ++spaces) {
+if (line[spaces] == '\t')
+console.log("Please remove tabs spaces in html document.");
+if (line[spaces] != ' ') {
+break;
+}
+}
+newtext = newtext + line.substring(spaces) + "\n";
+}
+return newtext;
+}
+
+function tabtospace(text) {
+return text.replace(/\t/g, ' '.repeat(spacesPerTab));
+}
+
+function getNodeBoundingClientRect(textNode) {
+let node = textNode;
+if (node.getBoundingClientRect)
+return node.getBoundingClientRect();
+
+var height = 0;
+if (document.createRange) {
+var range = document.createRange();
+range.selectNodeContents(textNode);
+if (range.getBoundingClientRect) {
+return range.getBoundingClientRect();
+}
+}
+return null;
+}
+
+function repaint_selected_node()
+{
+if (selected_node && getNodeBoundingClientRect(selected_node))
+{
+let pad = 3;
+let selected_rect = getNodeBoundingClientRect(selected_node);
+$( "#rect" )[0].style.display = original_display;
+$( "#rect" )[0].style.left = window.pageXOffset + parseInt(selected_rect.left) - pad + "px";
+$( "#rect" )[0].style.top = window.pageYOffset + parseInt(selected_rect.top) - pad + "px";
+$( "#rect" )[0].style.width = parseInt(selected_rect.width) + pad + pad + "px";
+$( "#rect" )[0].style.height = parseInt(selected_rect.height) + pad + pad + "px";
+}
+else
+{
+$( "#rect" )[0].style.display = "none";
+}
+}
+repaint_selected_node();
+
+// todo: export to library with parameter handleLoadedText
+let handleLoadedText = (text) => {
+$( '#selection' )[0].innerHTML = text;
+selected_node = $( '#selection' )[0];
+repaint_selected_node();
+};
+
+let input_container = document.createElement('div');
+input_container.innerHTML = '<input type="file" id="file-input" style="display: none;" />';
+$( 'body' )[0].append(input_container);
+
+function handleFileSelect (e) {
+var files = e.target.files;
+if (files.length < 1) {
+return;
+}
+var file = files[0];
+var reader = new FileReader();
+reader.onload = onFileLoaded;
+reader.readAsText(file);
+}
+
+function onFileLoaded (e) {
+/*var match = /^data:(.*);base64,(.*)$/.exec(e.target.result);
+if (match == null) {
+throw 'Could not parse result'; // should not happen
+}
+var mimeType = match[1];
+var content = match[2];*/
+let content = e.target.result;
+handleLoadedText(content);
+}
+
+$(function () {
+$('#file-input').change(handleFileSelect);
+});
+
+// https://stackoverflow.com/a/30832210/2979958
+function download(data, filename, type) {
+var file = new Blob([data], {type: type});
+if (window.navigator.msSaveOrOpenBlob) // IE10+
+window.navigator.msSaveOrOpenBlob(file, filename);
+else { // Others
+var a = document.createElement("a"),
+url = URL.createObjectURL(file);
+a.href = url;
+a.download = filename;
+document.body.appendChild(a);
+a.click();
+setTimeout(function() {
+document.body.removeChild(a);
+window.URL.revokeObjectURL(url);
+}, 0);
+}
+}
+
+function download_html(data) {
+return download(data, "file.html", "text/html");
+}
+
+});
+
+const beforeUnloadListener = (event) => {
+event.preventDefault();
+return event.returnValue = "Save data before exiting";
+};
+
+</script><div><input type="file" id="file-input" style="display: none;"></div></body></html>

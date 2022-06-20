@@ -1,0 +1,39 @@
+
+Kette: Reihenschaltung
+Masche: Parallelschaltung
+
+Aufg 1.1
+--------
+
+ (a) R_1 reguliert und vermindert die Stromstärke bei gedrücktem S_1.
+ (b) S_1 gedrückt: U_R_1 = U_e
+                   U_a = U_S_1 = 0
+	 S_1 Ruhestl.: U_a = U_S_1 = U_e = 5V, 
+	               da der Widerstand S_1 gegen unendlich geht 
+				   und es gilt U_S_1/inf = U_R_1/R1 sowie U_e = U_S_1 + U_R_1
+ (c) S_1 gedrückt: I = 5V/10kOhm = 0.5mA
+         Ruhestl.: I = 0 da S_1 gegen unendlich geht 
+			
+Aufg 1.2
+--------
+
+R = U/I = 5V / 10mA = 500Ohm
+U_D ~= 2.8V
+
+Weil Schwankungen des Stromes nur geringe Auswirkungen auf die Spannung
+ haben (?)
+
+Aufg 1.3
+--------			
+
+siehe Projekt
+
+Aufg 1.4
+--------
+
+Erläuterung: 
+  * Zeitaufwand
+  * Lagging
+  * keine sofortige Antwort auf Event
+  
+"For Uno WiFiRev.2, Due, Zero, MKR Family and 101 boards the interrupt number = pin number."
