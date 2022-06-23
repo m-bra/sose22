@@ -5,12 +5,40 @@
 }
 
 .scope {
-    background-color: white;
+    background-color: #FFD;
     border-style: solid;
     border-width: thin;
     border-radius: 4px;
     padding: 5px 5px;
     margin: 0px 0 5px;
+}
+
+.scope .scope {
+    background-color: #FDF;
+}
+
+.scope .scope .scope {
+    background-color: #DFF;
+}
+
+.scope .scope .scope .scope {
+    background-color: #EFE;
+}
+
+.scope .scope .scope .scope .scope {
+    background-color: #FEE;
+}
+
+.scope .scope .scope .scope .scope .scope {
+    background-color: #EEF;
+}
+
+.scope .scope .scope .scope .scope .scope .scope {
+    background-color: #EEE;
+}
+
+.whitebg {
+   background-color: white;
 }
 
 .tab { margin-left: 20px; }

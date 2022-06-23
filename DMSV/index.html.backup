@@ -1,0 +1,470 @@
+
+<meta charset="UTF-8">
+
+<title>💤 💤 💤 💤 💤 DMSV</title>
+
+<link rel="stylesheet" href="/style.css">
+<style>
+    img {
+        vertical-align: middle;
+    }
+</style>
+
+<div align="center">
+    <pre><b>D M S V</b></pre>
+</div>
+
+<pre>Der Erhalt des Übungsscheins erfordert das Erfüllen der folgenden Kriterien:
+  - Vorrechnen an der Tafel in der Übung 2x
+  - Drei abgabepflichtige Übungen / ausreichend Punkte
+  - Ein Programmierprojekt in Python / vier Abgaben / auf Github hochladen
+
+Präsenzaufgabenblatt vorher vorbereiten, aber nicht fertig bearbeiten. Keine Anwesenheitspflicht bei Übungen.
+
+bunlong.lay@uni-hamburg.de
+
+
+</pre>
+
+<pre>lat.: medium = Mitte, Mittelpunkt; auch Öffentlichkeit, Gemeinwohl, öffentlicher Weg
+
+Signal: Any quantity that varies with time, space, or other variables.
+  * Audio signals (varies with time)
+  * Speech signals (varies with time)
+  * Image (varies with space)
+  * Video (varies with time and space)
+
+Value of signal may represent physical quantities such as
+  * The sound pressure level (audio)
+  * The color value (image)
+
+  * When the value of the signal is available over a continuum of times, it is referred to as <b>continuous-time</b> signal.
+  * Continuous-time signals whose amplitudes also vary over a continuous range are called analog signal.
+  * If the value of the signal is available only at discrete instants of time, it is called a discrete-time signal 
+  * entsprechend die Begriffe continuous-valued and discrete-valued
+  * discrete-time discrete-valued signals are called digital signals.
+  * continuous-time continuous-valued signals are called analog signals.
+  * sampling = continuous-time -&gt; discrete-time
+  * quantization = continuous-value -&gt; discrete-value
+
+Sampling = discretize analog signal by taking time samples
+	    x(n) = x_a(nT), |n| = 0,1,2,..., T is the sampling period
+  * When machine code and finite precision is used to represent the value of x(n), the sequence of quantized values is called a digital signal
+  * A system or algorithm which processes one digital signal x(n) to produce a digital signal y(n) is called digital signal processor
+
+  * Extremely low processinng latencies can be achieved with analog circuits. Analog circuits can also be a requirement to process extremely wideband signals.
+  * A/D -&gt; DSP [-&gt; D/A] - Advantages: 
+    * flexible programmable OPs 
+    * often higher order of precision.
+      * analog circuits' tolerances reduce precision and make it very difficult to implement precise mathematical operations
+    * cheaper impl. possibly b/c dig. HW is cheaper / SW modifications are cheaper
+    * able to impl very difficult funcs&amp;tasks
+    * higher reliability
+    * digital signals are transportable / storable without loss of fidelity.
+    * extremely wide bandwidths not processable digitally
+
+
+</pre>
+
+
+						
+					
+
+<div class="scope">
+    CLASSIFICATION OF SIGNALS
+
+    <pre>  * dependent var of signal may be
+  	  real/complex: "single-channel signal"
+      or perhaps a vector: "multichannel signal"
+  * "M-dimensional signal" for M independent variables
+
+mathematical description of signal is called <b>signal model</b>
+  * deterministic/random signal
+<img style="width: 574.4px; height: 62.2931px;" src="/.img/bh2q6.png">
+					
+description of random signals using statistical techniques
+</pre>
+</div>
+<div class="scope">
+    FREQUENCES
+    <pre>F = cycles per time   ; OMEGA = radians per time
+f = cycles per sample ; omega = radians per sample
+
+
+
+    </pre>
+    <pre><img style="width: 615.4px; height: 92.3845px;" src="/.img/y3vnm.png"><br>
+</pre>
+
+    <div class="scope">
+        <img style="width: 593.4px; height: 69.8966px;" src="/.img/eISJu.png">
+
+        <div class="scope">
+            <img style="width: 378.6px; height: 98.1712px;" src="/.img/vazMa.png"><br>
+            <img style="width: 345.818px; height: 209.833px;" src="/.img/Fg9LI.png"><br>
+            <br>
+
+            Any discrete-timed sinusoid with |f| &gt; 0.5 is an alias of a sinusoid with |f| &lt; 0.5.<br>
+            <br>
+            <img style="width: 331.424px; height: 218.267px;" src="/.img/mO1Je.png">
+        </div>
+    </div>
+
+    <pre><img style="width: 552.4px; height: 53.9483px;" src="/.img/2cZ8U.png"></pre>
+    <pre><img style="width: 519.4px; height: 228.888px;" src="/.img/iq85j.png"><br></pre>
+    <pre>        <br>
+        <img style="width: 518.348px; height: 491.4px;" src="/.img/3kzxN.png"><br>
+    </pre>
+</div>
+
+<div class="scope">
+    <span style="background-color: rgb(255, 255, 255);">
+        <font color="#FF0000"><b>Übungsblätter nachholen</b></font>
+    </span>
+</div>
+
+<div class="scope">
+    <br>
+    <img style="width: 550.056px; height: 227.467px;" src="/.img/omoT1.png"><br>
+    If E is finite then x is an <i>energy-signal</i>. If P is finite and nonzero then x is a <i>power-signal.</i><br>
+    <img style="width: 519.4px; height: 35.742px;" src="/.img/26Cwc.png">
+</div>
+
+<div class="scope">
+    <div class="scope">folding/reflecting a signal about time origin n.</div>
+    <div class="scope">time scaling / downsampling<br></div>
+</div>
+
+<div class="scope">
+    a discrete-time system, which is an algorithm or a device, transforms the excitation to a response.<br>
+
+    <details class="scope" open="">
+        <summary>initial condition. initially relaxed.</summary>
+
+        <img style="width: 547.6px; height: 73.1267px;" src="/.img/c6J3q.png">
+        <img style="width: 530.4px; height: 57.109px;" src="/.img/jjhB7.png"><br>
+
+        <img src="/.img/bM0eO.png" style="width: 373.6px; height: 36.8146px;">
+    </details>
+
+    characteristics:
+
+    <div class="scope"><b>static</b><span style="font-size: 8px;">/memoryless</span> vs <b>dynamic</b>. memory of duration N, where N may be infinite.</div>
+    <div class="scope"><img style="width: 575.8px; height: 173.626px;" src="/.img/Ywdak.png"></div>
+    <div class="scope">
+        <img style="width: 308.8px; height: 24.8365px;" src="/.img/4BGwy.png"><img style="width: 282px; height: 26.3485px;" src="/.img/0hpI8.png"><br>
+        or <img style="width: 344.6px; height: 62.082px;" src="/.img/nD0Gi.png"><br>
+        <img style="width: 559.6px; height: 21.4571px;" src="/.img/Snedk.png"><img style="width: 313px; height: 19.5095px;" src="/.img/ZVQgP.png"><br>
+        <br>
+        Above definition is extended to non-relaxed systems by also applying it on the relation between the initial condition tuple and the zero-input response signal.<br>
+    </div>
+
+    <div class="scope">
+        <a href="#causalIR">
+            <b>causal/noncausal</b>
+
+            system
+        </a>
+    </div>
+
+    <div class="scope">
+        <b>bounded/unbounded </b>(concerning signal amplitude)<br>
+        <img style="width: 524.4px; height: 106.718px;" src="/.img/2Kq1I.png"><br>
+        <img style="width: 559.4px; height: 97.2219px;" src="/.img/DJcht.png">
+    </div>
+
+    <span>
+        <div class="scope">cascade/series or parallel interconnection<br></div>
+    </span>
+</div>
+
+<div class="scope">
+    LTI-System: Linear Time-Invariant System<br>
+    <div class="scope">
+        Convolution Sum.<br>
+        x(k) is convolved with the inpulse response h(n) to yield the output of an LTI-System<br>
+        <img style="width: 208px;" src="/.img/Pm2eJ.png"> <img style="width: 103px;" src="/.img/6b4qC.png"> <br>
+        where<img style="width: 129px;" src="/.img/s2gYq.png">is <img style="width: 509.4px; height: 22.9805px;" src="/.img/ejKWP.png"><img style="width: 202px;" src="/.img/4lzFR.png"><br>
+        where delta is the unit sample sequence<br>
+        <div class="scope">
+            x(k) and h(n-k) are functions over k.<br>
+            <i><span style="font-size: 10px;">formula is equivalent for x(n-k) and h(k) b/c of commutative property.</span></i><br>
+            <div class="scope">1. <i>fold</i> h(k) to yield h(-k)</div>
+            <div class="scope">2. <i>shift</i> h(-k) by n to yield h(n-k)</div>
+            <div class="scope">3. <i>multiply</i> x(k) with h(n-k)</div>
+            <div class="scope">4. <i>sumup</i> all samples of multiplied function x(k)h(n-k)</div>
+        </div>
+    </div>
+    <div>
+        <div class="scope">
+            Any LTI-System can be decomposed into a cascade and/or parallel interconnection of subsystems, since:
+            <div class="scope">
+                &nbsp;commutative law<br>
+                <img style="width: 227px; height: 25.1413px;" src="/.img/YuUvk.png"><br>
+            </div>
+
+            <div class="scope">
+                &nbsp;associative law<br>
+                <img style="width: 332px; height: 29.0691px;" src="/.img/djU9O.png"><br>
+            </div>
+            <div class="scope">
+                &nbsp;distributive law<br>
+                <img style="width: 455px; height: 26.1204px;" src="/.img/0oiyc.png"><br>
+            </div>
+        </div>
+        <span>
+            <div class="scope" id="causalIR">
+                Functions which are 0 for negative values may be called <b>causal sequences.</b><br>
+                <b>An LTI-System is causal iff</b> its impulse response is causal.<br>
+                <i><span style="font-size: 9px;">Thus convolution sum is limited on one side. If also the input sequence is causal, it may further be limited on both sides. (2.3.40-41)</span></i><br>
+            </div>
+        </span>
+        <span>
+            <div class="scope">
+                <b>An LTI-System is stable iff</b> <img style="width: 18.6511px; height: 23.5167px;" src="/.img/oNhGh.png"> is finite.<br>
+                <img style="width: 537.8px; height: 25.5675px;" src="/.img/prQQT.png"><br>
+                <img style="width: 211.8px; height: 77.3885px;" src="/.img/5CWF8.png"><br>
+            </div>
+        </span>
+        
+						
+						<span>
+            <div class="scope">
+                FIR = finite-duration input response&nbsp;&nbsp; \<br>
+                IIR = infinite-duration input response&nbsp; *-&gt;&nbsp; both linear time-invariant systems<span><div class="scope">recursive/non-recursive systems</div></span>
+                <span>
+                    <div class="scope">
+                        <img style="width: 506.91px; height: 60.0167px;" src="/.img/Du4uC.png">This system is called non-recursive.<br>
+                        Causal FIR-Systems are always non-recursive.<br>
+                    </div>
+                    <div class="scope">recursive system must be computed in order</div>
+                </span>
+                <hr>
+                <span>
+                    <div class="scope"><img style="width: 575.8px; height: 61.1886px;" src="/.img/85BdV.png"></div>
+        
+                    <div class="scope">
+                        <img style="width: 158.8px; height: 23.3266px;" src="/.img/LmNaY.png">
+                        <div class="scope"><img style="width: 265.8px; height: 19.0476px;" src="/.img/NPVRn.png"><img style="width: 43px; height: 21.5px;" src="/.img/Przmr.png"></div>
+                        <div class="scope">
+                            <img style="width: 528.8px; height: 72.5663px;" src="/.img/7ysCq.png"><br>
+                            or free response
+                        </div>
+                    </div>
+        
+                    <div class="scope">
+                        <img style="width: 521.8px; height: 199.77px;" src="/.img/cQfi4.png">
+        
+                        <br>
+                        Those systems are linear and time-invariant.<br>
+        
+                        <img src="/.img/uuyOM.png" width="50%">
+						<details open="">
+                           <summary> System function </summary>
+                           ... is the z-transform of the impulse response <br>
+                           <img src="/.img/jYVIB.png">
+                        </details>
+					
+        
+                        <div class="scope">
+                            direct form I and direct form II/canonical form
+                        </div>
+        
+                        <img src="/.img/akvFq.png" width="60%">
+                    </div>
+                </span>
+                <br>
+            </div>
+        
+            <span>(auto)correlation</span>
+        
+            <br>
+        
+            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+            
+						<details class="scope" open="">
+                <summary> z-Transform </summary>
+            
+                
+            
+                <img src="/.img/aNT4o.png" width="30%">
+            
+                <img src="/.img/pXwao.png" width="40%">
+                
+                
+                <details> <summary> ROC </summary>
+            
+                    <img src="/.img/MY02B.png" width="30%">
+            
+                    <br>
+            
+                    <img src="/.img/ATbTz.png" width="40%">
+            
+                    <img src="/.img/wxOjn.png" width="50%">
+            
+                </details>
+            
+                <details open="">
+                    <summary> table of common z-transforms </summary>
+                    
+						<img src="/.img/ZqWUz.png">
+					
+                </details>
+                    
+                <details open=""> <summary> Inverse z-Transform </summary>
+                 <div class="scope">
+                       <img src="/.img/hJWg8.png"> = <img src="/.img/yDglV.png"> since <img src="/.img/qm10q.png"> <br>
+                       <img src="/.img/fRToc.png">
+                 </div>
+                 </details>
+                        
+                 
+						
+						
+						<details open="">
+                     <summary> Properties </summary>
+                
+                     <details class="tab" open="">
+                          <summary> Linearity </summary><div class="tab">
+                          <img class="scope" src="/.img/DjMqB.png">
+                     </div></details>
+                        
+                     <details class="tab" open="">
+                          <summary> Time shifting </summary><div class="tab">
+                         <img class="scope" src="/.img/PzZdZ.png">
+                     </div></details>
+                        
+                        
+                        
+                        
+                        
+                        
+                     <details class="tab" open="">
+                        <summary> Scaling in the z-Domain </summary><div class="tab">
+                    
+                        <div class="scope">
+                        <img src="/.img/xeLnN.png">
+                     <br>
+                        <img src="/.img/n8V6A.png">
+                        </div>
+                    </div></details>
+                    
+                        
+                        
+                    <details class="tab" open="">
+                         <summary> Time reversal </summary><div class="tab">
+                         <div class="scope">
+                              <img src="/.img/v663e.png"> <br>
+                              <img src="/.img/Z9D5E.png">
+                         </div>
+                    </div></details>
+                        
+                        
+                        
+                        
+                    <details class="tab" open="">
+                        <summary> Differentiation in the z-domain </summary><div class="tab">
+                        <div class="scope">
+                            <img src="/.img/PE1mm.png"><br>
+                            <img src="/.img/4lrNJ.png">
+                        </div>
+                        since
+                        <div class="scope">
+                            <img src="/.img/JqTfN.png">
+                        </div>
+                    </div></details>
+                        
+                        
+                        
+                        
+                    <details class="tab" open=""> 
+                         <summary> Convolution </summary><div class="tab">
+                         <img class="scope" src="/.img/d0BHI.png"><br>
+                         <img class="scope" src="/.img/2PwFV.png">
+                    </div></details>
+                                        
+                    <details class="tab" open="">
+                         <summary> Multiplication </summary><div class="tab">
+                         <div class="scope">
+                              <img src="/.img/j6Yhy.png"> <br>
+                              <img src="/.img/J47jU.png">
+                         </div>
+                    </div></details>
+                
+                    <details class="tab" open=""> 
+                        <summary> Initial value theorem </summary><div class="tab">
+                        <div class="scope">
+                            <span style="font-family: lmmath-regular;">
+                                If x(0) is causal <br>
+                            </span>
+                    
+                            <img src="/.img/8BjtF.png"> <br> since <img src="/.img/BEsg9.png">
+                        </div>
+                    
+                    </div></details>
+                    <div class="tab">
+                         Parseval's relation
+                    </div>
+                 </details>
+					
+					
+					
+						
+					<details open=""> 
+						<summary> rational z-transforms </summary>
+					 
+						
+						
+						<img src="/.img/fdo6q.png">
+						<img src="/.img/5TZDe.png">
+						
+					
+					
+					
+					
+					<div class="tab">
+                     <span style="color: red;"> look at slide #164 </span>
+                </div> </details>
+						
+					
+            
+            </details>
+					</span>
+					
+					
+    </div>
+    .
+</div>
+
+
+						
+						
+						
+						
+						
+						
+						<div class="scope">
+    <b> <span style="color: #FF0000;"> 
+        Exercises in book may be solved for exam preparation 
+    </span> </b>
+</div>
+					
+					
+					
+					
+					
+					
+					
+
+<pre>HW/SW - hardware/software</pre>
+
+<p><span></span></p>
+
