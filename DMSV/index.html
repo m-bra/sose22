@@ -1,4 +1,5 @@
 
+
 <meta charset="UTF-8">
 
 <title>DMSV</title>
@@ -138,7 +139,7 @@ f = cycles per sample ; omega = radians per sample
 <div class="scope">
     a discrete-time system, which is an algorithm or a device, transforms the excitation to a response.<br>
 
-    <details class="scope" open="">
+    <details class="scope">
         <summary>initial condition. initially relaxed.</summary>
 
         <img style="width: 547.6px; height: 73.1267px;" src="/.img/c6J3q.png">
@@ -219,13 +220,25 @@ f = cycles per sample ; omega = radians per sample
                 <i><span style="font-size: 9px;">Thus convolution sum is limited on one side. If also the input sequence is causal, it may further be limited on both sides. (2.3.40-41)</span></i><br>
             </div>
         </span>
-        <span>
-            <div class="scope">
+        
+						
+						
+						
+						
+						<div class="scope">
                 <b>An LTI-System is stable iff</b> <img style="width: 18.6511px; height: 23.5167px;" src="/.img/oNhGh.png"> is finite.<br>
                 <img style="width: 537.8px; height: 25.5675px;" src="/.img/prQQT.png"><br>
                 <img style="width: 211.8px; height: 77.3885px;" src="/.img/5CWF8.png"><br>
-            </div>
-        </span>
+        
+                <div class="scope">
+                     An LTI system is BIBO stable, iff the ROC of the system includes the unit circle
+                </div>
+        </div>
+					
+					
+					
+					
+					
         
 						
 						<span>
@@ -259,11 +272,19 @@ f = cycles per sample ; omega = radians per sample
                         Those systems are linear and time-invariant.<br>
         
                         <img src="/.img/uuyOM.png" width="50%">
-						<details open="">
-                           <summary> System function </summary>
-                           ... is the z-transform of the impulse response <br>
-                           <img src="/.img/jYVIB.png">
+						
+						
+						
+						<details>
+                           <summary> System function is the z-transform of the impulse response </summary>
+                           <details class="tab" open=""> <summary> (redundant) </summary>
+                               since Y(z) = H(z)X(z) we can derive from linear constant-coefficient difference equations: <br>
+                               <img src="/.img/jYVIB.png">
+                           </details>
                         </details>
+					
+					
+					
 					
         
                         <div class="scope">
@@ -300,7 +321,7 @@ f = cycles per sample ; omega = radians per sample
                 <img src="/.img/pXwao.png" width="40%">
                 
                 
-                <details> <summary> ROC </summary>
+                <details open=""> <summary> ROC </summary>
             
                     <img src="/.img/MY02B.png" width="30%">
             
@@ -312,14 +333,36 @@ f = cycles per sample ; omega = radians per sample
             
                 </details>
             
-                <details open="">
+                
+						
+						
+						
+						
+						
+						<details>
                     <summary> table of common z-transforms </summary>
-                    
-						<img src="/.img/ZqWUz.png">
-					
+                    <img src="/.img/ZqWUz.png">
+                    <div class="tab">
+                       <details open="">
+                          <summary> Poles summary  </summary>
+                          <img src="/.img/8Xh01.png">
+                       </details>
+                    </div>
                 </details>
+					
+					
+					
+					
+					<span>
+                
+                </span>
+						
+						
+					
+					
+					
                     
-                <details open=""> <summary> Inverse z-Transform </summary>
+                <details> <summary> Inverse z-Transform </summary>
                  <div class="scope">
                        <img src="/.img/hJWg8.png"> = <img src="/.img/yDglV.png"> since <img src="/.img/qm10q.png"> <br>
                        <img src="/.img/fRToc.png">
@@ -329,7 +372,7 @@ f = cycles per sample ; omega = radians per sample
                  
 						
 						
-						<details open="">
+						<details>
                      <summary> Properties </summary>
                 
                      <details class="tab" open="">
@@ -443,6 +486,16 @@ f = cycles per sample ; omega = radians per sample
     </div>
     .
 </div>
+						
+						
+						
+						<div class="scope">
+    <img src="/.img/pYQ9Y.png" width="50%">
+</div>
+					
+					
+					
+					
 
 
 						
@@ -456,6 +509,8 @@ f = cycles per sample ; omega = radians per sample
         Exercises in book may be solved for exam preparation 
     </span> </b>
 </div>
+						
+					
 					
 					
 					
@@ -466,5 +521,7 @@ f = cycles per sample ; omega = radians per sample
 
 <pre>HW/SW - hardware/software</pre>
 
-<p><span></span></p>
+
+						<span>continue slides p. 195</span>
+					
 

@@ -5,7 +5,7 @@
 }
 
 .scope {
-    background-color: #FFD;
+    background-color: #FFFFFD;
     border-style: solid;
     border-width: thin;
     border-radius: 4px;
@@ -14,27 +14,27 @@
 }
 
 .scope .scope {
-    background-color: #FDF;
+    background-color: #FFF4FF;
 }
 
 .scope .scope .scope {
-    background-color: #DFF;
+    background-color: #F4FFFF;
 }
 
 .scope .scope .scope .scope {
-    background-color: #EFE;
+    background-color: #EEFFEE;
 }
 
 .scope .scope .scope .scope .scope {
-    background-color: #FEE;
+    background-color: #FFEEEE;
 }
 
 .scope .scope .scope .scope .scope .scope {
-    background-color: #EEF;
+    background-color: #EEEEFF;
 }
 
 .scope .scope .scope .scope .scope .scope .scope {
-    background-color: #EEE;
+    background-color: #EEEEEE;
 }
 
 .whitebg {
