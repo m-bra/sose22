@@ -45,7 +45,7 @@ void on_timer() {
     other_last_input_state = other_now;
 
     ++measurement_i; ++other_measurement_i;
-  bool stable = measurement_i >= 16, other_stable = measurement_i >= 16;
+    bool stable = measurement_i >= 16, other_stable = measurement_i >= 16;
 
     bool keyup = stable && user_input_state == LOW && now == HIGH;
     bool other_keyup = other_stable && other_user_input_state == LOW && other_now == HIGH;
@@ -93,10 +93,15 @@ void setup () {
   pinMode(pinAIN1, OUTPUT);
   pinMode(pinAIN2, OUTPUT);
 
-  Timer3.initialize(1E3);
-  //attatch ISR
-  Timer3.attachInterrupt(on_timer); // attatch ISR & start timer
-  Timer3.stop();
+ #if defined(__SAM3X8E__)
+   Timer3.configure(1E3, on_timer);
+ #else
+   Timer3.initialize(1E3);
+   //attatch ISR
+   Timer3.attachInterrupt(on_timer); // attatch ISR & start timer
+   Timer3.stop();
+ #endif
+
 
   attachInterrupt(digitalPinToInterrupt(pin_input), on_input, CHANGE);
   attachInterrupt(digitalPinToInterrupt(other_pin_input), on_input, CHANGE);
@@ -197,17 +202,17 @@ void on_keyup(int target_pin)
 void write_led()
 {
   int R = input_mode == POWER_MODE; 
-    int G = input_mode == ROTATION_MODE;
-    int B = rotation == STOP;
+  int G = input_mode == ROTATION_MODE;
+  int B = rotation == STOP;
     
-    analogWrite(pin_led.R, !R * 255); 
-    analogWrite(pin_led.G, !G * 255);
+  analogWrite(pin_led.R, !R * 255); 
+  analogWrite(pin_led.G, !G * 255);
   analogWrite(pin_led.B, !B * 255);
 
-    Serial.print("[");
-    Serial.print(mode_str[input_mode]); 
-    Serial.print("] ");
-    Serial.print(rotation_str[rotation]);
+  Serial.print("[");
+  Serial.print(mode_str[input_mode]); 
+  Serial.print("] ");
+  Serial.print(rotation_str[rotation]);
   Serial.print("; power = ");
   Serial.println(power);
 }
