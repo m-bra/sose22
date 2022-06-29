@@ -1,0 +1,3 @@
+[submodule "DMSV/prj"]
+	path = DMSV/prj
+	url = https://git.informatik.uni-hamburg.de/sp-students/exercises/dmsp-students2022/dmsp-group-06.git
