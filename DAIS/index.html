@@ -153,7 +153,7 @@ problem statement.
     </span>
     </details>
     
-    <details class="scope" open="">
+    <details class="scope">
     <summary>Missing Data</summary>
     <div class="scope">
     replace a missing value...<br>
@@ -344,7 +344,7 @@ problem statement.
         • Supervised algorithms need output class labels, unsupervised ones don't<br>
         
         
-                        <details class="scope">
+                        <details class="scope" open="">
                 <summary><b>transform/extract</b> the existing features to a new reduced set of features </summary>
                 
                 
@@ -352,19 +352,7 @@ problem statement.
 						
 						
 						
-						<div align="right">
-                      <details> <summary>skipping in literature:</summary>
-                        <div class="tab">
-                           • <b>3.3</b> Relief Algorithm
-                        </div>
-                        <div class="tab">
-                           • <b>3.4</b> ENTROPY MEASURE FOR RANKING FEATURES
-                        </div>
-                        <div class="tab">
-                           • <b>3.5</b> PCA <i>(taken from Weber's lecture)</i>
-                        </div>
-                      </details>
-                    </div>
+						
 					
 					
 					
@@ -531,55 +519,185 @@ problem statement.
 						
 						
 						
-						<details class="scope" open="">
-                 <summary> Value reduction / Feature-discretization </summary>
+						
+						<details class="scope">
+                 <summary> Value and sample reduction / Feature-discretization </summary>
                  
-						<img src="/.img/steel.png" width="30%">
-					
-						
-						
-						<details open="">
+                        <img src="/.img/steel.png" width="30%">
+                    
+                        
+                        
+                        <details open="">
                      <summary> Types of sampling </summary>
                      <img src="/.img/stock.png" width="30%">
 						
 						
 						
+						<details class="scope"> <summary> Binning </summary>
+                        <div class="scope">
+                            equal-width (distance) partitioning
+                            <div class="scope"> Outliers may dominate partitioning </div>
+                            <div class="scope"> Skewed data not handled well </div>
+                        </div>
+                        <div class="scope">
+                            equal-depth (frequency) partitioning
+                        </div>
+                        for each value determine its bin and replace value with bin mean or boundary
+                    </details>
+					
+					
+					
+					
+                        
+                        
+                        
+                        
+                        
 						
-						<details class="scope" open="">
-                        <summary> Chi-square </summary>
-                        <img src="/.img/land.png" width="20%">
-						<div class="scope"> 
+						
+						
+						<details class="scope">
+                        <summary> <img src="/.img/chisquare.png" width="1.9%"> </summary>
+                        
+                        
+                        
+                        
+                        <div class="scope"> 
                             expected values drawn from analyst's hypothesis
+                            which is apparently always the null hypothesis that all features are uncorrelated
+                            <img src="/.img/pen.png" width="35%">
                         </div>
-						
-						
-						
-						<div class="scope">
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="scope"> <p>
                             Chi-square distribution is squared normal distribution.<br>
-                            Cumulative table: Significance level α is the probability of a result greater than corresponding critical value.
+                            Cumulative table: Significance level α is the probability of a result greater than corresponding critical value. </p>
+                            <span class="scope">
+                               DF = degrees of freedom
+                            </span> <p>
+                            Looking up <img src="/.img/chisquare.png" width="1.5%"> in the cumulative table gives the probability that the hypothesis is true.
+                        </p></div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                            <img src="/.img/fish.png" width="35%"> <img src="/.img/wal.png" width="30%">
                         </div>
-					
-					
-					
-						<div class="scope">
-                            
-                        </div>
-					
-					
-					
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <style>
+                           ol, ul {
+                           }
+                        </style>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                        
+                        
+                        
+                        <details class="scope" open=""> <summary> Chi-merge </summary> 
+                            feature F is discretized with respect to another class feature
+                            <ol> <li> sort by F  </li>
+                            <li> repeatedly merge adjacent intervals if <img src="/.img/chisquare.png" width="2%"> is below threshold<br>
+                                 for contingency table where each class value is assigned to one column </li></ol>
+                        </details>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                         
                     </details>
 					
 					
 					
 					
-					
+                    
+                    
+                    
+                    
+                    
                 </details>
-					
-					
-					
+                    
+                    
+                    
                  
             </details>
+					
 					
 					
 					
@@ -591,7 +709,136 @@ problem statement.
     </details>
 					
 
-<div class="scope">Estimate the model.</div>
+
+						
+						
+						<details class="scope" open="">
+        <summary>Estimate the model.</summary>
+        
+                        <div class="scope">
+            <b>Supervised learning</b><br>
+            (Solved training data exists)
+            
+                        
+                        
+                        
+                        <div class="scope">
+                Decision Trees<br>
+                
+                
+                        
+                        <div class="scope">
+                     <img src="/.img/treeconstruction.png" width="35%">
+                        
+                        <br><span>k&gt;=2 partitions per attribute-split</span>
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                        <div class="scope">
+                        greedy algorithm chooses locally optimal splits first neglecting global effect on future choices
+                        <div class="scope">
+                              <img src="/.img/id.png" width="40%">
+                        
+                              <br><span>(assuming categorical attributes)</span>
+                        </div>
+                        <span>or</span>
+                        <br><span>
+                        </span>
+                        
+                        
+                        
+                        <div class="scope">
+                            <img src="/.img/gini.png" width="40%">
+                        
+                    <br>
+                            <img src="/.img/split.png" width="40%">
+                        </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                    
+                        
+                    
+                    
+                        <img src="/.img/majority.png" width="40%">
+                        
+                        
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+                    
+                        
+                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                    
+                    
+                    
+                    <img src="/.img/treepruning.png" width="35%">
+                    
+                    
+            </div>
+                    
+                    
+                    
+                    
+        </div>
+                    
+        <div class="scope">
+            <b>Unsupervised learning</b><br>
+            (No solved training data exists)
+        </div>
+                        <span>determine accuracy rate by comparing model output to test data with its known labels</span>
+                    
+    </details>
+					
+					
+					
 <div class="scope">Interpret the model and draw conclusions</div>
 </div>
 					
@@ -686,6 +933,35 @@ dimensional space.
 					
 
 <br>
+						
+						
+						
+						
+						<div align="left">
+                      <details open=""> <summary>chapters in literature:</summary>
+                        <div class="tab">
+                           • <b>3.3</b> Relief Algorithm - skipped
+                        </div>
+                        <div class="tab">
+                           • <b>3.4</b> ENTROPY MEASURE FOR RANKING FEATURES - skipped
+                        </div>
+                        <div class="tab">
+                           • <b>3.5</b> PCA <i> - taken from Weber's lecture</i>
+                        </div>
+                        <div class="tab">
+                           • <b>3.6 - 3.7</b> <i> - taken from Weber's lecture</i>
+                        </div>
+                        <div class="tab">
+                           • <b>3.8</b> - skipped
+                        </div>
+                        from chapter 4 on not following literature but slides
+                      </details>
+                    </div>
+					
+					
+					
+					
+					
 <p></p>
 <p>Solve Exercise "DecisionTree.notebook" from 12. May<br></p>
 
