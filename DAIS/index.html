@@ -722,15 +722,20 @@ problem statement.
                         
                         
                         
-                        <div class="scope">
-                Decision Trees<br>
+                        
+						<details class="scope" open="">
+                <summary> Decision Trees </summary>
                 
                 
                         
-                        <div class="scope">
-                     <img src="/.img/treeconstruction.png" width="35%">
                         
-                        <br><span>k&gt;=2 partitions per attribute-split</span>
+						<div class="scope">
+                        <b> Tree construction </b> <br>
+                        * At start, all the training examples are at the root.<br>
+                        * Split the examples into multiple partitions recursively based on selected attributes.
+                    </div><span>
+                    
+                    
                     
                     
                         
@@ -738,16 +743,28 @@ problem statement.
                         
                         
                     
-                        <div class="scope">
-                        greedy algorithm chooses locally optimal splits first neglecting global effect on future choices
+                        
+                        </span>
+						<details class="scope" open="">
+                        <summary> attribute choice </summary>
+                        <span> greedy algorithm chooses locally optimal splits first neglecting global effect on future choices </span>
+						<div align="right">
+                              <details> <summary> (illustration) </summary> <img src="/.img/JCBzC.png" width="45%"> </details>
+                          </div>
+					
                         <div class="scope">
                               <img src="/.img/id.png" width="40%">
                         
-                              <br><span>(assuming categorical attributes)</span>
+                              <br>
+                        <span>(ID3 assumes categorical attributes)</span>
+                    
                         </div>
                         <span>or</span>
-                        <br><span>
-                        </span>
+                        
+                        <br>
+                    
+                        
+                    
                         
                         
                         
@@ -757,6 +774,15 @@ problem statement.
                     <br>
                             <img src="/.img/split.png" width="40%">
                         </div>
+                        <span>, but </span><br><span>
+                    
+                    </span>
+                        
+                        
+                        
+                        
+                        
+                        <img src="/.img/bg7BI.png" width="40%">
                     
                     
                     
@@ -764,65 +790,127 @@ problem statement.
                     
                     
                     
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </details>
+					
+						<details class="scope">
+                    <summary> Determine best binary split point for an attribute </summary>
+                    sort all <i>n</i> samples with respect to the attribute <br>
+                    examine all <i>n</i> possible splits and select the one with the greatest gain ratio
+                   
+                </details>
+						
+						
+						
+						
+						<details class="scope"> <summary> Missing attribute values in C4.5 </summary>
+                    * gain expression multiplied with the proportion of known attr. values F <br>
+                    
+						
+						<img src="/.img/qNFGN.png" width="60%">
+						<br>
+						
+						
+						<img src="/.img/prjMA.png" width="60%"><br>
+						<img src="/.img/wK7YK.png" width="60%">
+					
+					
+					
+					
+					
+					
+					
+                </details>
+					
+					
+					
+					
+					
+					<span>
+                    
+                    
+                        
+                    
+                    
+                        </span>
+						<div class="scope"><img src="/.img/majority.png" width="40%"></div>
+					
+						
+					
+					
+                    
+                    
+                    
+                    
+						<details class="scope"> 
+						<summary> <img src="/.img/treepruning.png" width="35%"> </summary>
+					
+                    
+						
+					
+                    
+						
+						
+						
+						
+						<div class="tab"> <img class="tab" src="/.img/dRktP.png" width="35%"> </div>
+						
+						
+						
+						
+						<div class="scope">
+                         <b> Predicted Error </b> <br>
+                         <img src="/.img/0rDUY.png" width="47%">
                     </div>
-                    
-                        
-                    
-                    
-                        <img src="/.img/majority.png" width="40%">
-                        
-                        
-                    
-                    
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    
-                    
-                        
-                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                </details>
+						
+						
+						
+						
+						
+						
+						
+						<details class="scope" open=""> <summary> Limitations </summary>
+                          
+						<img src="/.img/JwmXA.png" width="40%">
+						<br>
+					
+						<span>
+                    -&gt; possible solution: </span>
+					<br><span>
+                    </span><img src="/.img/JDS2F.png" width="40%">
+					
+                          
+                </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
                     
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
-                    
-                    
-                    
-                    <img src="/.img/treepruning.png" width="35%">
-                    
-                    
-            </div>
+            </details>
+					
                     
                     
                     
@@ -966,6 +1054,8 @@ dimensional space.
 <p>Solve Exercise "DecisionTree.notebook" from 12. May<br></p>
 
 Continue with "An additional single-dimensional method is Grubbs method"@p.44<br>
+						<span>continue slide p. 18</span>
+					
 
 						
 					
