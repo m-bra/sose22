@@ -716,7 +716,9 @@ problem statement.
         <summary>Estimate the model.</summary>
         
                         <div class="scope">
-            <b>Supervised learning</b><br>
+            
+						<b>Predictive tasks / Supervised learning</b>
+					<br>
             (Solved training data exists)
             
                         
@@ -910,6 +912,11 @@ problem statement.
                     
                     
             </details>
+						<details class="scope">
+                <summary>k-nearest neighbors (KNN)</summary>
+                <img src="/.img/neighbor.png" width="40%">
+            </details>
+					
 						
 						
 						
@@ -1165,10 +1172,143 @@ problem statement.
                     
         </div>
                     
-        <div class="scope">
-            <b>Unsupervised learning</b><br>
+        
+						<div class="scope">
+            
+                        <b>Descriptive Tasks / Unsupervised learning</b>
+                    <br>
             (No solved training data exists)
+            (No distinction between output/input in data)
         </div>
+						<details class="scope">
+            <summary>Intelligent Agents interacting with environment</summary>
+            <img src="/.img/auto.png" width="40%">
+                        
+                        <img src="/.img/agent.png" width="40%"><span>
+            </span><br><img src="/.img/world.png" width="40%">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <details class="scope">
+                 <summary>Markov Decision Process (MDP)</summary>
+                 
+                        <img src="/.img/markov.png" width="25%">
+                        <img src="/.img/chain.png" width="30%">
+                        <span>(γ left out here)</span>
+                    
+                 <hr>   <img src="/.img/bellman.png" width="40%"><br>
+                 <span style="font-size: 18">MDP</span><br>
+                 <img src="/.img/MDP.png" width="30%">
+                        <img src="/.img/return.png" width="40%">
+                        <div class="scope">
+                    tabular reinforcement learning stores Q in a table
+                </div><span>
+                </span>
+                        
+                        <div class="scope">
+                    deep reinforcement learning architecture outputs Q(a) data row for each input state s in a feed-forward network<br>
+                    * backpropagate TD-error δ
+                </div>
+                    
+                    
+                        
+                    
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                    <b>Temporal difference learning</b><br>
+                     Temporal difference error δ is r+γQ(s', a')-Q(s, a)<br>
+                    <span>simply factor update difference of Q with a learning rate</span><br>
+                    <div align="right"><details open=""><summary>derived equation</summary>
+                       <img src="/.img/equation.png" width="40%">
+                    </details></div>
+                    SARSA algorithm is on-policy and takes difference with Q of chosen action<br>
+                    Q-learning is off-policy and takes difference with greatest possible Q over possible next actions<br>
+                        
+                        <span>Actor-critic takes differences on V</span>
+                    
+                    
+                    <div align="right"><details open=""><summary>derived equation</summary>
+                       <img src="/.img/policy.png" width="40%">
+                    </details></div>
+                </div>
+                        <div class="scope">
+                    <img src="/.img/experience.png" width="40%">
+                </div>
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                    <b>goal-conditioned reinforcement learning</b><br>
+                    assume last state to be goal in <b>hindsight</b> of <b>experience replay</b><br>
+                    goal could also be a natural language sentence
+                </div>
+                    
+                        <div class="scope">
+                    Hierarchical Reinforcement Learning<br>
+                </div>
+                        <div class="scope">
+                    <img src="/.img/model.png" width="40%">
+                        <img src="/.img/rl.png" width="40%">
+                        <details class="scope" open="">
+                        <summary> MuZero </summary>
+                        <img src="/.img/muzero.png" width="40%">
+                        
+                        <img src="/.img/graph.png" width="25%">
+                    
+                    
+                    </details>
+                    
+                    
+                </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            </details>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+        </details>
+					
+						
+					
+					
                         
 						
 						
@@ -1447,7 +1587,7 @@ problem statement.
 						
 						
 						
-						<details class="scope" open=""><summary>Ensemble Learning</summary>
+						<details class="scope"><summary>Ensemble Learning</summary>
             <details class="scope" open=""><summary>Achieving Diversity</summary>
                 <img src="/.img/SAEDK.png" width="40%">
 						<br>
@@ -1578,7 +1718,12 @@ problem statement.
 					
 					
 					
-<div class="scope">Interpret the model and draw conclusions</div>
+
+						<details class="scope" open="">
+        <summary>Interpret the model and draw conclusions</summary>
+        
+    </details>
+					
 </div>
 					
 
@@ -1628,6 +1773,12 @@ dimensional space.
 <div class="scope">Almost every point is an outlier.<br></div>
 </div>
 </div>
+						<details class="scope" open=""><summary>Case-based reasoning</summary>
+    <img src="/.img/case.png" width="40%">
+						<img src="/.img/reasoning.png" width="40%">
+					
+</details>
+					
 						
 						
 						
