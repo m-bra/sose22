@@ -67,10 +67,16 @@ problem statement.
     
     <details class="scope">
     <summary> <span>There are a number of indicators of data quality that have to be taken care of in the preprocessing phase of a data-mining process:</span> </summary>
-    <div class="scope">
-    The data should be accurate. The analyst has to check that the name is spelled<br role="presentation">
-    correctly, the code is in a given range, the value is complete, and so on.<br>
-    </div>
+    
+						
+						<div class="scope">
+            The data should be accurate. The analyst has to check that the name is spelled<br role="presentation">
+            correctly, the code is in a given range, the value is complete, and so on.<br>
+            <img src="/.img/yTacj.png" width="40%"><br>
+            <img src="/.img/2iV0d.png" width="40%">
+            </div>
+					
+					
     <div class="scope">
     The data should be stored according to data type. the analyst must ensure that<br role="presentation">
     the numerical value is not presented in character form, that integers are not in<br role="presentation">
@@ -107,7 +113,7 @@ problem statement.
     </div>
     </details>
     
-    <details class="scope">
+    <details class="scope" open="">
     <summary>Transformation of Raw Data</summary><br>
     <span>
     <div class="scope">
@@ -153,7 +159,7 @@ problem statement.
     </span>
     </details>
     
-    <details class="scope">
+    <details class="scope" open="">
     <summary>Missing Data</summary>
     <div class="scope">
     replace a missing value...<br>
@@ -161,7 +167,7 @@ problem statement.
     <div class="scope">with its feature mean</div>
     <div class="scope">with its feature mean for the given class<br></div>
 						
-						<details class="scope">
+						<details class="scope" open="">
                     <summary> Linear regression </summary>
                     <img src="/.img/water.png" width="40%"><img src="/.img/leave.png" width="30%">
 						<br><span>
@@ -190,7 +196,7 @@ problem statement.
     </div>
     </details>
     
-    <details class="scope">
+    <details class="scope" open="">
     <summary>outlier analysis <span style="font-size: 9px;">= outlier detection = novelty detection = anomaly detection = noise detection = deviation detection = exception mining</span></summary>
     <div class="scope">Their detection can identify system faults and fraud before they escalate with potentially catastrophic consequences.</div>
     <div class="scope">
@@ -207,78 +213,93 @@ problem statement.
     <div class="scope">
     main types of outlier detection schemes are<br>
     <span>
-    <details class="scope">
-    <summary> graphical or visualization techniques,<br></summary>
-    Boxplot (1-D), Scatter plot (2-D), and Spin plot (3-D),
-    </details>
+    
+						
+						<details class="scope">
+                    
+                        <summary> graphical or visualization techniques,<br></summary>
+                    
+                    <details open=""> <summary> Boxplot (1-D), </summary>
+                    <img src="/.img/B53t4.png" width="40%">
+                    </details>
+                    
+                    Scatter plot (2-D), <br>and Spin plot (3-D),
+                        
+                    </details>
+					
+					
     </span>
-    <span>
-    <details class="scope">
-    <summary> statistical-based techniques,</summary>• Uni- and multivariate methods<br>
-    <span>
-    <span>
-    <span>
-    <span>• </span><span>often unsuitable </span><br>
-    &nbsp; <span><span>• </span></span>for high-dimensional data sets and <br>
-    &nbsp; <span><span>• </span></span>for arbitrary data sets without prior knowledge of the underlying data distribution.
-    </span>
-    </span>
-    </span>
-    <br>
-    • • either assume a known underlying distribution of the observations or, <br>
-    &nbsp; <span><span>• </span></span>at least, based on statistical estimates of unknown distribution parameters.<br>
-    <span>
-    <span><span>• </span></span>
-    </span>
-    When the database is contaminated with outliers, sample mean and sample variance may deviate and significantly <br>
-    &nbsp; affect the outlier-detection performance<br>
-    &nbsp; • Age = { −3 56 23 39 156 52 41 22 9 28 139 31 55 20 67 37 11 55 45 37 }<br>
-    &nbsp;&nbsp;&nbsp; Then potential outliers are outside the range [ −54.1, 131.2] <br>
     
-    <br>
-    </details>
-    
-    <details class="scope">
-    <summary> distance-based methods </summary>
-    
-    Mahalanobis distance measure depends on estimated parameters of the multi-variate distribution.
-    <br>
-    Sample covariance matrix.<br>
-    <img src="/.img//zIjre.png" style="width: 264.2px; height: 63.1783px;">
-    <br>
-    
-    <img src="/.img//xhemR.png" style="width: 261.2px; height: 75.2832px;">
-    
-    <hr>
-    p,d parameter method
-    </details>
-    
-    <details>
-    <summary> Model-based methods </summary>
-    
-    <div class="scope">
-    sequential-exception technique <br>
-    
-    â¢ non-optimal, but linear solution to following NP-hard problem: <br>
-    • choose the smallest exception set E in the sample set S such that F(S\E) for some dissimilarity function F (such as variance) will be maximally reduced. <br>
-    • implemented by removing at each iteration that element which reduces F the most
-    </div>
-    </details>
-    
-    <span>Balanced and Iterative Reducing and Clustering Using Hierarchies (BIRCH) </span>
-    
-    <br>
-    
-    <span> and Density-Based Spatial Clustering of Applications with Noise (DBSCAN), </span>
-    
-    <br>
-    
-    <span> k nearest neighbor (kNN) </span>
-    
-    <br>
-    
-    <span> as powerful tools for outliers detection</span>
-    </span>
+						<span>
+                <details class="scope">
+                <summary> statistical-based techniques,</summary>• Uni- and multivariate methods<br>
+                <span>
+                <span>
+                <span>
+                <span>• </span><span>often unsuitable </span><br>
+                &nbsp; <span><span>• </span></span>for high-dimensional data sets and <br>
+                &nbsp; <span><span>• </span></span>for arbitrary data sets without prior knowledge of the underlying data distribution.
+                </span>
+                </span>
+                </span>
+                <br>
+                • • either assume a known underlying distribution of the observations or, <br>
+                &nbsp; <span><span>• </span></span>at least, based on statistical estimates of unknown distribution parameters.<br>
+                <span>
+                <span><span>• </span></span>
+                </span>
+                When the database is contaminated with outliers, sample mean and sample variance may deviate and significantly <br>
+                &nbsp; affect the outlier-detection performance<br>
+                &nbsp; • Age = { −3 56 23 39 156 52 41 22 9 28 139 31 55 20 67 37 11 55 45 37 }<br>
+                &nbsp;&nbsp;&nbsp; Then potential outliers are outside the range [ −54.1, 131.2] <br>
+                
+                <br>
+                </details>
+                
+                <details class="scope">
+                <summary> distance-based methods </summary>
+                
+                Mahalanobis distance measure depends on estimated parameters of the multi-variate distribution.
+                <br>
+                Sample covariance matrix.<br>
+                <img src="/.img//zIjre.png" style="width: 264.2px; height: 63.1783px;">
+                <br>
+                
+                <img src="/.img//xhemR.png" style="width: 261.2px; height: 75.2832px;">
+                
+                <hr>
+                p,d parameter method
+                </details>
+                
+                
+                        <details class="scope">
+                    <summary> Model-based methods </summary>
+                    
+                    <div>
+                    sequential-exception technique <br>
+                    
+                    â¢ non-optimal, but linear solution to following NP-hard problem: <br>
+                    • choose the smallest exception set E in the sample set S such that F(S\E) for some dissimilarity function F (such as variance) will be maximally reduced. <br>
+                    • implemented by removing at each iteration that element which reduces F the most
+                    </div>
+                    </details>
+                    
+                
+                <span>Balanced and Iterative Reducing and Clustering Using Hierarchies (BIRCH) </span>
+                
+                <br>
+                
+                <span> and Density-Based Spatial Clustering of Applications with Noise (DBSCAN), </span>
+                
+                <br>
+                
+                <span> k nearest neighbor (kNN) </span>
+                
+                <br>
+                
+                <span> as powerful tools for outliers detection</span>
+                </span>
+					
     </div>
     </details>
     
@@ -479,9 +500,9 @@ problem statement.
                 </details>
                     
         
-        <details class="scope">
+        <details class="scope" open="">
         <summary><b>select</b> a subset of the existing features<br></summary>
-        <details open="">
+        <details>
         <summary></summary>
         this scope follows slides, not lecture
         </details>
@@ -509,7 +530,7 @@ problem statement.
         </details>
         
         
-						<details>
+						<details open="">
                 <summary> </summary>
                 <img src="/.img//6USmx.png" width="45%">
                 </details>
@@ -520,7 +541,7 @@ problem statement.
 						
 						
 						
-						<details class="scope">
+						<details class="scope" open="">
                  <summary> Value and sample reduction / Feature-discretization </summary>
                  
                         <img src="/.img/steel.png" width="30%">
@@ -533,7 +554,7 @@ problem statement.
 						
 						
 						
-						<details class="scope"> <summary> Binning </summary>
+						<details class="scope" open=""> <summary> Binning </summary>
                         <div class="scope">
                             equal-width (distance) partitioning
                             <div class="scope"> Outliers may dominate partitioning </div>
@@ -556,17 +577,23 @@ problem statement.
 						
 						
 						
-						<details class="scope">
+						<details class="scope" open="">
                         <summary> <img src="/.img/chisquare.png" width="1.9%"> </summary>
                         
                         
                         
                         
-                        <div class="scope"> 
-                            expected values drawn from analyst's hypothesis
-                            which is apparently always the null hypothesis that all features are uncorrelated
-                            <img src="/.img/pen.png" width="35%">
+                        
+						
+						<div class="scope"> 
+                            expected values drawn from analyst's hypothesis<br>
+                            which is apparently always the null hypothesis that all features are uncorrelated<br>
+                            
+						<img src="/.img/pen.png" width="45%">
+					
                         </div>
+					
+					
                     
                     
                     
@@ -725,8 +752,12 @@ problem statement.
                         
                         
                         
-						<details class="scope">
-                <summary> Decision Trees </summary>
+						<details class="scope" open="">
+                
+						
+						<summary>Decision Trees </summary>
+					
+					
                 
                 
                         
@@ -801,7 +832,7 @@ problem statement.
                     
                     </details>
 					
-						<details class="scope">
+						<details class="scope" open="">
                     <summary> Determine best binary split point for an attribute </summary>
                     sort all <i>n</i> samples with respect to the attribute <br>
                     examine all <i>n</i> possible splits and select the one with the greatest gain ratio
@@ -811,7 +842,7 @@ problem statement.
 						
 						
 						
-						<details class="scope"> <summary> Missing attribute values in C4.5 </summary>
+						<details class="scope" open=""> <summary> Missing attribute values in C4.5 </summary>
                     * gain expression multiplied with the proportion of known attr. values F <br>
                     
 						
@@ -850,7 +881,7 @@ problem statement.
                     
                     
                     
-						<details class="scope"> 
+						<details class="scope" open=""> 
 						<summary> <img src="/.img/treepruning.png" width="35%"> </summary>
 					
                     
@@ -912,7 +943,7 @@ problem statement.
                     
                     
             </details>
-						<details class="scope">
+						<details class="scope" open="">
                 <summary>k-nearest neighbors (KNN)</summary>
                 <img src="/.img/neighbor.png" width="40%">
             </details>
@@ -920,8 +951,12 @@ problem statement.
 						
 						
 						
-						<details class="scope">
-                <summary> Perceptron </summary>
+						<details class="scope" open="">
+                
+						
+						<summary>Perceptron </summary>
+					
+					
                 goal: minimize squared error sum <br>
                 
                         
@@ -1026,7 +1061,7 @@ problem statement.
 						
 						
 						
-						<details class="scope"><summary>Deep Neural Networks</summary>
+						<details class="scope" open=""><summary>Deep Neural Networks</summary>
 						
 					
                    typical convolutional neural network (CNN):<br>
@@ -1055,7 +1090,7 @@ problem statement.
             </details>
 						
 						
-						<details class="scope">
+						<details class="scope" open="">
                 <summary>Recurrent Neural Networks</summary>
                 <img src="/.img/1TbNm.png" width="40%">
                 
@@ -1087,13 +1122,13 @@ problem statement.
                 </details>
 						
 						
-						<details class="scope"> <summary>Multi-Layer Perceptron with fixed weights ("Extreme Learning Machine")</summary>
+						<details class="scope" open=""> <summary>Multi-Layer Perceptron with fixed weights ("Extreme Learning Machine")</summary>
                      <img src="/.img/NGnCR.png" width="40%">
                 </details>
 						
 						
 						
-						<details class="scope"> <summary> Hopfield Network </summary>
+						<details class="scope" open=""> <summary> Hopfield Network </summary>
 						
 					
                     <img src="/.img/YUMDS.png" width="40%"><br>
@@ -1173,13 +1208,173 @@ problem statement.
         </div>
                     
         
+						
 						<div class="scope">
             
                         <b>Descriptive Tasks / Unsupervised learning</b>
                     <br>
             (No solved training data exists)
             (No distinction between output/input in data)
+            
+						
+						
+						
+						
+						
+						
+						
+						
+						<details class="scope" open="">
+                 <summary>Frequent Patterns / Association Rules</summary>
+                 <img src="/.img/RDNQR.png" width="20%">
+                 <img src="/.img/YpeG6.png" width="20%">
+                 <img src="/.img/8pSWW.png" width="40%">
+                 <br>
+                 <img src="/.img/WP6A6.png" width="40%">
+            </details>
+						
+						
+						<details class="scope" open=""><summary>Clustering</summary>
+                <img src="/.img/zPsXO.png" width="40%"><br>
+                Davies-Bouldin index<br>
+                
+						
+						<img src="/.img/EtoMS.png" width="13%">
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="scope">
+                    <b>Partitioning Algorithms</b><br>
+                    Error measure for a given k (while DB-index is a k-agnostic measure):<br>
+                    <img src="/.img/iL31T.png" width="23%"><br>
+                    
+						
+						
+						<div class="scope">
+                        <b>k-means</b>
+                        <br><img src="/.img/aFglT.png" width="40%"><br>
+                        online-version slightly moves centroid immediately after assigning point<br>
+                        <img src="/.img/PK1PQ.png" width="40%">
+						
+						<div class="scope">
+                            <b>k-medoids</b><br>
+                            L1-norm instead of L2-norm
+                        </div>
+					
+					
+                    </div>
+					
+					
+					
+                </div>
+						
+						
+						
+						<details class="scope" open=""><summary>Hierarchical Clustering</summary>
+                    does not require given k<br>
+                    requires termination condition
+                    <div class="scope"> <b><u>Ag</u>glomerative <u>Nes</u>ting</b><br>
+                        <img src="/.img/sZLgt.png" width="40%">
+                    </div>
+						
+						<div class="scope"><b><u>Di</u>visive <u>Analysis</u></b>
+                        complex top-down algorithm    
+                    </div>
+					
+					
+                </details>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<details class="scope" open=""><summary>Model-based clustering</summary>
+                   <img src="/.img/NC2hl.png" width="40%"><br>
+                   <br>Kohonen Self-Organizing Feature Maps<br>
+                   <img src="/.img/C5Z7s.png" width="40%"><br><img src="/.img/USQBr.png" width="27%">
+						
+						
+						<img src="/.img/aBRwF.png" width="40%">
+						
+						
+						
+						
+						
+						<div class="scope">
+                        <b> dynamic models </b><br><br>
+                        <b> Growing Neural gas </b><br>
+                        add new neuron after each predefined period between the two neurons with highest accumulated error, <br>
+                        that is, the distance to the current data point<br><br>
+                        <b> Growing When Required </b> <br><br>
+                        <img src="/.img/j4Wnw.png" width="30%">
+                    </div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+            </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
         </div>
+					
 						<details class="scope">
             <summary>Intelligent Agents interacting with environment</summary>
             <img src="/.img/auto.png" width="40%">
@@ -1798,12 +1993,27 @@ dimensional space.
    <div class="scope">
       Covariance matrix<img src="/.img/6BG3v.png" width="20%">
    </div>
+						
+						
+						
+						
+						<div class="scope">
+         <b>Dissimilarity matrix</b> is triangular matrix of element distances<br>
+         <img src="/.img/DJ1DV.png" width="40%">
+    </div>
+					
+					
+					
+					
+					
            
    <div class="scope">
       eigenvectors, eigenvalues
    </div>                             
    
-   vectors are orthonormal iff their matrix composition's transpose equals its inverse <br>
+   vectors are orthonormal iff their matrix composition's transpose equals its inverse 
+						<br>
+					
          
                         <a href="L05.html">L05.html</a>
         
