@@ -1,0 +1,1869 @@
+
+
+
+						
+						
+						
+						
+						<script src="jquery.js"></script>
+					
+					
+					
+					
+					
+
+						
+						
+						<meta charset="UTF-8">
+					
+					
+					
+
+
+						
+						
+						<title>DAIS</title>
+					
+					
+					
+
+
+						
+						
+						<link rel="stylesheet" href="/style.css">
+					
+						
+					
+					
+					
+					
+
+
+						
+						
+						<a href="https://lernen.min.uni-hamburg.de/course/view.php?id=2247"> Moodle </a>
+					
+					<p><iframe src="/DAIS/notes0.html" id="notes0" style="height: 1100px;" width="100%"> </iframe></p>
+					
+
+
+						<div class="scope">
+<p>Data Mining as an iterative process.</p>
+<p>
+Domain-specific knowledge and experience are usually necessary in order to come up with a meaningful problem statement. Unfortunately, many application studies tend to focus on the data-mining technique at the expense of a clear
+problem statement.
+</p>
+
+<div class="scope">State the problem and formulate the hypothesis.</div>
+<div class="scope">Collect the data.</div>
+
+
+						<details class="scope" open="">
+    <summary> Preprocess the data: Outliers, Scaling, encoding, selecting features, dimensionality reduction, etc.</summary>
+    
+    <div class="scope">
+    traditional(structured)/nontraditional(semi-structured/unstructured) data
+    </div>
+    
+    <details class="scope">
+    <summary> <span>There are a number of indicators of data quality that have to be taken care of in the preprocessing phase of a data-mining process:</span> </summary>
+    <div class="scope">
+    The data should be accurate. The analyst has to check that the name is spelled<br role="presentation">
+    correctly, the code is in a given range, the value is complete, and so on.<br>
+    </div>
+    <div class="scope">
+    The data should be stored according to data type. the analyst must ensure that<br role="presentation">
+    the numerical value is not presented in character form, that integers are not in<br role="presentation">
+    the form of real numbers, and so on.<br>
+    </div>
+    <div class="scope">
+    The data should have integrity. Updates should not be lost because of conflicts<br>
+    among different users; robust backup and recovery procedures should be implemented <br>
+    if they are not already part of the Data Base Management System (DBMS).<br>
+    </div>
+    <div class="scope">
+    The data should be consistent. The form and the content should be the same<br>
+    after integration of large data sets from different sources.<br>
+    </div>
+    <div class="scope">
+    The data should not be redundant. In practice, redundant data should be mini-<br>
+    mized, and reasoned duplication should be controlled, or duplicated records<br>
+    should be eliminated.<br>
+    </div>
+    <div class="scope">
+    The data should be timely. The time component of data should be recognized<br>
+    explicitly from the data or implicitly from the manner of its organization.<br>
+    </div>
+    <div class="scope">
+    The data should be well understood. Naming standards are a necessary but not<br>
+    the only condition for data to be well understood. The user should know that<br>
+    the data correspond to an established domain.<br>
+    </div>
+    <div class="scope">
+    The data set should be complete. Missing data, which occurs in reality, should<br>
+    be minimized. Missing data could reduce the quality of a global model. On the<br>
+    other hand, some data-mining techniques are robust enough to support analyses<br>
+    of data sets with missing values.<br>
+    </div>
+    </details>
+    
+    <details class="scope">
+    <summary>Transformation of Raw Data</summary><br>
+    <span>
+    <div class="scope">
+    <span>
+    <div class="scope">
+    <span>
+    <span>
+    <span>
+    A priori, one should expect to find missing values, distortions, misrecording, inadequate sampling, and so on in these<br>
+    initial data sets. Raw data that do not appear to show any of these problems should immediately arouse suspicion.
+    </span>
+    </span>
+    </span>
+    </div>
+    <div class="scope">
+    <span>
+    <span>
+    <span><span>The lesson to be learned is that a major role remains for human insight while defining the problem.</span></span>
+    </span>
+    </span>
+    </div>
+    </span>
+    </div>
+    </span>
+    <span>
+    <div class="scope">
+    Normalizations<br>
+    <span>
+    <div class="scope">
+    Decimal Scaling
+    </div>
+    <div class="scope">Min-Max Normalization<br></div>
+    </span>
+    </div>
+    </span>
+    <span>
+    <div class="scope">
+    Data Smoothing and <span><span>reducing number of distinct values</span></span>
+    </div>
+    <div class="scope">
+    <span><span>Differences and Ratios</span></span><br>
+    </div>
+    </span>
+    </details>
+    
+    <details class="scope">
+    <summary>Missing Data</summary>
+    <div class="scope">
+    replace a missing value...<br>
+    <div class="scope">with a single global constant</div>
+    <div class="scope">with its feature mean</div>
+    <div class="scope">with its feature mean for the given class<br></div>
+						
+						<details class="scope">
+                    <summary> Linear regression </summary>
+                    <img src="/.img/water.png" width="40%"><img src="/.img/leave.png" width="30%">
+						<br><span>
+                    </span><div class="scope"> a good fit minimizes squared error </div>
+						
+						
+						
+					
+					
+					
+					
+                </details>
+					
+					
+    this <i>will</i> introduce bias
+    </div>
+    <div class="scope">
+    <span style="font-size: 9px;"> or</span><br>
+    treat the value as "don't care", <br>
+    extending the sample to a set of artificial samples<br>
+    </div>
+    <div class="scope">
+    It is best to generate multiple solutions<br>
+    of data mining with and without features that have missing values and then analyze<br>
+    and interpret them.<br>
+    </div>
+    </details>
+    
+    <details class="scope">
+    <summary>outlier analysis <span style="font-size: 9px;">= outlier detection = novelty detection = anomaly detection = noise detection = deviation detection = exception mining</span></summary>
+    <div class="scope">Their detection can identify system faults and fraud before they escalate with potentially catastrophic consequences.</div>
+    <div class="scope">
+    Many data-mining techniques may not work well in the presence of outliers. Outliers may introduce skewed distributions or complexity into models of the data, which may make it difficult, if not impossible, to fit an accurate
+    model.
+    </div>
+    <div class="scope">
+    The data-mining analyst has to be very careful in the automatic elimination of<br>
+    outliers because if the data are correct, that could result in the loss of important hidden<br>
+    information.
+    </div>
+    <div class="scope">two main steps: (1) Build a profile of the normal behavior, and (2) use the normal profile to detect outliers. The profile can be patterns or summary statistics for the overall population.</div>
+    
+    <div class="scope">
+    main types of outlier detection schemes are<br>
+    <span>
+    <details class="scope">
+    <summary> graphical or visualization techniques,<br></summary>
+    Boxplot (1-D), Scatter plot (2-D), and Spin plot (3-D),
+    </details>
+    </span>
+    <span>
+    <details class="scope">
+    <summary> statistical-based techniques,</summary>• Uni- and multivariate methods<br>
+    <span>
+    <span>
+    <span>
+    <span>• </span><span>often unsuitable </span><br>
+    &nbsp; <span><span>• </span></span>for high-dimensional data sets and <br>
+    &nbsp; <span><span>• </span></span>for arbitrary data sets without prior knowledge of the underlying data distribution.
+    </span>
+    </span>
+    </span>
+    <br>
+    • • either assume a known underlying distribution of the observations or, <br>
+    &nbsp; <span><span>• </span></span>at least, based on statistical estimates of unknown distribution parameters.<br>
+    <span>
+    <span><span>• </span></span>
+    </span>
+    When the database is contaminated with outliers, sample mean and sample variance may deviate and significantly <br>
+    &nbsp; affect the outlier-detection performance<br>
+    &nbsp; • Age = { −3 56 23 39 156 52 41 22 9 28 139 31 55 20 67 37 11 55 45 37 }<br>
+    &nbsp;&nbsp;&nbsp; Then potential outliers are outside the range [ −54.1, 131.2] <br>
+    
+    <br>
+    </details>
+    
+    <details class="scope">
+    <summary> distance-based methods </summary>
+    
+    Mahalanobis distance measure depends on estimated parameters of the multi-variate distribution.
+    <br>
+    Sample covariance matrix.<br>
+    <img src="/.img//zIjre.png" style="width: 264.2px; height: 63.1783px;">
+    <br>
+    
+    <img src="/.img//xhemR.png" style="width: 261.2px; height: 75.2832px;">
+    
+    <hr>
+    p,d parameter method
+    </details>
+    
+    <details>
+    <summary> Model-based methods </summary>
+    
+    <div class="scope">
+    sequential-exception technique <br>
+    
+    â¢ non-optimal, but linear solution to following NP-hard problem: <br>
+    • choose the smallest exception set E in the sample set S such that F(S\E) for some dissimilarity function F (such as variance) will be maximally reduced. <br>
+    • implemented by removing at each iteration that element which reduces F the most
+    </div>
+    </details>
+    
+    <span>Balanced and Iterative Reducing and Clustering Using Hierarchies (BIRCH) </span>
+    
+    <br>
+    
+    <span> and Density-Based Spatial Clustering of Applications with Noise (DBSCAN), </span>
+    
+    <br>
+    
+    <span> k nearest neighbor (kNN) </span>
+    
+    <br>
+    
+    <span> as powerful tools for outliers detection</span>
+    </span>
+    </div>
+    </details>
+    
+    
+                        
+						<details class="scope" open="">
+        <summary>Data reduction </summary>
+        
+        
+                        
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="scope">
+              • Influence on:<br>
+             &nbsp;&nbsp;&nbsp;• Computing Time<br>
+            &nbsp;&nbsp;  • Predictive/Descriptive Accuracy<br>
+            &nbsp;&nbsp;  &nbsp;&nbsp;summarize and generalize data into the model<br>
+            &nbsp;&nbsp;  &nbsp;&nbsp;by choosing relevant data and reducing redundant data<br>
+            &nbsp;&nbsp;  • Representation of the Data-Mining Model<br>
+            &nbsp;&nbsp;  &nbsp;&nbsp;The simplicity of representation, obtained usually with data reduction, often implies that a model<br>
+            &nbsp;&nbsp;  &nbsp;&nbsp;can be better understood.<br>
+            </div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                    
+        
+        <details class="scope">
+        <summary>Desired properties of data-reduction algorithms:</summary>
+        (not included in slides)
+        </details>
+        
+        <details class="scope" open="">
+        <summary>Feature/Dimensionality reduction</summary> • Of irrelevant, correlated and redundant data<br>
+        • Supervised algorithms need output class labels, unsupervised ones don't<br>
+        
+        
+                        <details class="scope" open="">
+                <summary><b>transform/extract</b> the existing features to a new reduced set of features </summary>
+                
+                
+                        
+						
+						
+						
+						
+					
+					
+					
+					
+                    
+                  
+                
+                        
+						
+						
+						<div class="scope">
+                      • linear                    <br>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+						<details class="tab" open="">
+                          
+                        
+                        
+                        
+                        
+                        <summary><b>PCA</b> - principal components </summary>
+                        
+                        
+                        
+                        
+                        
+                          
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="tab">
+                              • compute eigenvectors of covariance matrix <br>
+                              • eigenvectors of m-greatest eigenvalues define transformation to m-dimensional space,<br>
+                                &nbsp;&nbsp;where features are uncorrelated<br>
+                              • eigenvalues equal to variances along the corresponding eigenaxes
+                            </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        </details>
+					
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+						
+						
+						<details class="tab">
+                         <summary><b>FA</b> - Factor Analysis</summary>
+                        </details>
+					
+					
+					
+                    
+						<details class="tab">
+                         <summary><b>ICA</b> - Independent Component Analysis</summary>
+                        </details>
+					
+                    
+						
+						<details class="tab">
+                          <summary><b>MDS</b> - Multidimensional Scaling <br></summary>
+                          <div class="tab">
+                          • reduce dimensions while preserving distances <br>
+                          • variants:<br>
+                          <div class="tab">
+                          • FastMap<br>
+                          • Isomap<br>
+                          <div class="tab">
+                            • graph-based, nonlinear<br>
+                            • geodesic distance<br>
+                          </div>
+                          </div>
+                          </div>
+                        </details>
+					
+					
+                    </div>
+					
+					
+					
+                    
+                
+                <div class="scope">
+                  non-linear
+                </div>
+                
+                <div>
+                  optimize by choosing subset P randomly for feature selection, <br>
+                  then testing results on rest of data, repeating with bigger subset if necessary
+                </div>
+                
+                </details>
+                    
+        
+        <details class="scope">
+        <summary><b>select</b> a subset of the existing features<br></summary>
+        <details open="">
+        <summary></summary>
+        this scope follows slides, not lecture
+        </details>
+        • univariate methods • filter model
+        
+        <div class="scope">
+        preprocessing activity, without trying to optimize the performance of any specific data-mining technique directly<br>
+        
+						<img src="/.img//kjqyI.png" width="40%">
+					
+        </div>
+        
+        <div class="scope">
+        wrapper model<br>
+        
+						
+						
+						<img src="/.img//fzspi.png" width="35%">
+					
+					
+					
+        </div>
+        
+        • embedded methods<br>
+        </details>
+        
+        
+						<details>
+                <summary> </summary>
+                <img src="/.img//6USmx.png" width="45%">
+                </details>
+					
+        </details>
+						
+						
+						
+						
+						
+						<details class="scope">
+                 <summary> Value and sample reduction / Feature-discretization </summary>
+                 
+                        <img src="/.img/steel.png" width="30%">
+                    
+                        
+                        
+                        <details open="">
+                     <summary> Types of sampling </summary>
+                     <img src="/.img/stock.png" width="30%">
+						
+						
+						
+						<details class="scope"> <summary> Binning </summary>
+                        <div class="scope">
+                            equal-width (distance) partitioning
+                            <div class="scope"> Outliers may dominate partitioning </div>
+                            <div class="scope"> Skewed data not handled well </div>
+                        </div>
+                        <div class="scope">
+                            equal-depth (frequency) partitioning
+                        </div>
+                        for each value determine its bin and replace value with bin mean or boundary
+                    </details>
+					
+					
+					
+					
+                        
+                        
+                        
+                        
+                        
+						
+						
+						
+						<details class="scope">
+                        <summary> <img src="/.img/chisquare.png" width="1.9%"> </summary>
+                        
+                        
+                        
+                        
+                        <div class="scope"> 
+                            expected values drawn from analyst's hypothesis
+                            which is apparently always the null hypothesis that all features are uncorrelated
+                            <img src="/.img/pen.png" width="35%">
+                        </div>
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="scope"> <p>
+                            Chi-square distribution is squared normal distribution.<br>
+                            Cumulative table: Significance level α is the probability of a result greater than corresponding critical value. </p>
+                            <span class="scope">
+                               DF = degrees of freedom
+                            </span> <p>
+                            Looking up <img src="/.img/chisquare.png" width="1.5%"> in the cumulative table gives the probability that the hypothesis is true.
+                        </p></div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                            <img src="/.img/fish.png" width="35%"> <img src="/.img/wal.png" width="30%">
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <style>
+                           ol, ul {
+                           }
+                        </style>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                        
+                        
+                        
+                        <details class="scope" open=""> <summary> Chi-merge </summary> 
+                            feature F is discretized with respect to another class feature
+                            <ol> <li> sort by F  </li>
+                            <li> repeatedly merge adjacent intervals if <img src="/.img/chisquare.png" width="2%"> is below threshold<br>
+                                 for contingency table where each class value is assigned to one column </li></ol>
+                        </details>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                    </details>
+					
+					
+					
+					
+                    
+                    
+                    
+                    
+                    
+                </details>
+                    
+                    
+                    
+                 
+            </details>
+					
+					
+					
+					
+					
+					
+        </details>
+					
+                    
+    </details>
+					
+
+
+						
+						
+						<details class="scope" open="">
+        <summary>Estimate the model.</summary>
+        
+                        <div class="scope">
+            
+						<b>Predictive tasks / Supervised learning</b>
+					<br>
+            (Solved training data exists)
+            
+                        
+                        
+                        
+                        
+						<details class="scope">
+                <summary> Decision Trees </summary>
+                
+                
+                        
+                        
+						<div class="scope">
+                        <b> Tree construction </b> <br>
+                        * At start, all the training examples are at the root.<br>
+                        * Split the examples into multiple partitions recursively based on selected attributes.
+                    </div><span>
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                        
+                    
+                        
+                        </span>
+						<details class="scope" open="">
+                        <summary> attribute choice </summary>
+                        <span> greedy algorithm chooses locally optimal splits first neglecting global effect on future choices </span>
+						<div align="right">
+                              <details> <summary> (illustration) </summary> <img src="/.img/JCBzC.png" width="45%"> </details>
+                          </div>
+					
+                        <div class="scope">
+                              <img src="/.img/id.png" width="40%">
+                        
+                              <br>
+                        <span>(ID3 assumes categorical attributes)</span>
+                    
+                        </div>
+                        <span>or</span>
+                        
+                        <br>
+                    
+                        
+                    
+                        
+                        
+                        
+                        <div class="scope">
+                            <img src="/.img/gini.png" width="40%">
+                        
+                    <br>
+                            <img src="/.img/split.png" width="40%">
+                        </div>
+                        <span>, but </span><br><span>
+                    
+                    </span>
+                        
+                        
+                        
+                        
+                        
+                        <img src="/.img/bg7BI.png" width="40%">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </details>
+					
+						<details class="scope">
+                    <summary> Determine best binary split point for an attribute </summary>
+                    sort all <i>n</i> samples with respect to the attribute <br>
+                    examine all <i>n</i> possible splits and select the one with the greatest gain ratio
+                   
+                </details>
+						
+						
+						
+						
+						<details class="scope"> <summary> Missing attribute values in C4.5 </summary>
+                    * gain expression multiplied with the proportion of known attr. values F <br>
+                    
+						
+						<img src="/.img/qNFGN.png" width="60%">
+						<br>
+						
+						
+						<img src="/.img/prjMA.png" width="60%"><br>
+						<img src="/.img/wK7YK.png" width="60%">
+					
+					
+					
+					
+					
+					
+					
+                </details>
+					
+					
+					
+					
+					
+					<span>
+                    
+                    
+                        
+                    
+                    
+                        </span>
+						<div class="scope"><img src="/.img/majority.png" width="40%"></div>
+					
+						
+					
+					
+                    
+                    
+                    
+                    
+						<details class="scope"> 
+						<summary> <img src="/.img/treepruning.png" width="35%"> </summary>
+					
+                    
+						
+					
+                    
+						
+						
+						
+						
+						<div class="tab"> <img class="tab" src="/.img/dRktP.png" width="35%"> </div>
+						
+						
+						
+						
+						<div class="scope">
+                         <b> Predicted Error </b> <br>
+                         <img src="/.img/0rDUY.png" width="47%">
+                    </div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                </details>
+						
+						
+						
+						
+						
+						
+						
+						<details class="scope" open=""> <summary> Limitations </summary>
+                          
+						<img src="/.img/JwmXA.png" width="40%">
+						<br>
+					
+						<span>
+                    -&gt; possible solution: </span>
+					<br><span>
+                    </span><img src="/.img/JDS2F.png" width="40%">
+					
+                          
+                </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                    
+                    
+            </details>
+						<details class="scope">
+                <summary>k-nearest neighbors (KNN)</summary>
+                <img src="/.img/neighbor.png" width="40%">
+            </details>
+					
+						
+						
+						
+						<details class="scope">
+                <summary> Perceptron </summary>
+                goal: minimize squared error sum <br>
+                
+                        
+                        
+                        
+                        <div class="scope">
+                    <b> Gradient Descent </b> <br>
+                    <img src="/.img/gradient.png" width="50%">
+                        
+                        <span>
+                       <img src="/.img/charged.png">
+                    </span>
+                        <br><span>
+                    </span>
+                        
+                        
+                    <img src="/.img/perceptron_algorithm.png" width="40%"><br>
+                
+                    assumption of linear activation function only for single-layer perceptrons
+                    
+                    
+                </div>
+                    
+                    
+                    
+                    
+                        
+                        
+                        <div class="scope">
+                    <b> Each neuron separates input space by a half plane </b><br>
+                    <img src="/.img/plane.png" width="40%">
+                </div>
+                        
+                        <div class="scope"> threshold is negative bias for step activation function </div>
+                        
+                        
+                        <div class="scope">
+                    <img src="/.img/weights.png" width="40%">
+                </div>
+                        
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                    <b> Backpropagation </b>
+                    <div class="scope">
+                        differentiable activation function that switches quickly between saturation values: <br>
+                        sigmoid: <img src="/.img/sigmoid.png">
+                    </div>
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                        <img src="/.img/delta.png" width="35%"><br>
+                        <img src="/.img/errorterms.png" width="35%"><br>
+                        <img src="/.img/updaterules.png" width="35%"><br>
+                        added momentum<br>
+                        <img src="/.img/momentum.png" width="35%"><br>
+                    </div>
+                    
+                        
+                        <img class="scope" src="/.img/batch.png" width="40%">
+                        <div class="scope"> Gradient Descent dynamics </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+						
+						<img class="scope" src="/.img/discussion.png" width="40%">
+					
+					
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            </details>
+						
+						
+						
+						
+						
+						<details class="scope"><summary>Deep Neural Networks</summary>
+						
+					
+                   typical convolutional neural network (CNN):<br>
+                   <img src="/.img/VVeec.png" width="60%">
+                
+                        
+                        <details class="scope" open=""><summary>Convolutional layer</summary>
+                     
+                        <img src="/.img/TmKVt.png" width="40%">
+                    
+                </details>
+                        
+                    
+                        <details class="scope" open=""><summary>Pooling</summary>
+                    <img src="/.img/ce6TI.png" width="40%">
+                </details>
+                        
+                        <details class="scope" open=""><summary>softmax</summary>
+                    <img src="/.img/w5CwR.png" width="40%">
+                </details>
+                    
+                    
+                    
+                    
+                    
+            </details>
+						
+						
+						<details class="scope">
+                <summary>Recurrent Neural Networks</summary>
+                <img src="/.img/1TbNm.png" width="40%">
+                
+						<details class="scope"><summary> Simple Recurrent Neural Networks<summary>
+                      <img src="/.img/AWLck.png" width="40%">
+						
+						
+						<img src="/.img/wgvww.png" width="40%">
+					
+					
+					
+                </summary></summary></details>
+						<details class="scope" open=""> <summary>Time-delay Neural Networks (TDNN)</summary>
+                      <img src="/.img/FvGNn.png" width="40%">
+                </details>
+						<details class="scope" open=""><summary>Echo-State Network</summary>
+                    
+						
+						<img src="/.img/sBFib.png" width="40%">
+						<img src="/.img/AMhr1.png" width="40%">
+						<br><span>
+                    </span><img src="/.img/eDBFN.png" width="40%">
+						<img src="/.img/1YCqp.png" width="40%">
+					
+					
+					
+					
+					
+                </details>
+						
+						
+						<details class="scope"> <summary>Multi-Layer Perceptron with fixed weights ("Extreme Learning Machine")</summary>
+                     <img src="/.img/NGnCR.png" width="40%">
+                </details>
+						
+						
+						
+						<details class="scope"> <summary> Hopfield Network </summary>
+						
+					
+                    <img src="/.img/YUMDS.png" width="40%"><br>
+                        <img src="/.img/nwaO7.png" width="40%"><img src="/.img/hWULm.png" width="40%"><br>
+                    <img src="/.img/oCHDZ.png" width="40%">
+						
+						<img src="/.img/t4Gjb.png" width="30%">
+						<br>
+						
+						
+						<br>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<u><b><span style="font-size: 17px">perceptron rule</span></b></u>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<br><img src="/.img/FSJUB.png" width="40%">
+					
+					
+					
+					
+					
+                    
+                </details>
+						<details class="scope" open=""><summary>Hebb-like Sequence Generation</summary>
+                    
+						
+						<img src="/.img/2s8CJ.png" width="40%">
+					
+					
+                </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+            </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                    
+                    
+                    
+                    
+        </div>
+                    
+        
+						<div class="scope">
+            
+                        <b>Descriptive Tasks / Unsupervised learning</b>
+                    <br>
+            (No solved training data exists)
+            (No distinction between output/input in data)
+        </div>
+						<details class="scope">
+            <summary>Intelligent Agents interacting with environment</summary>
+            <img src="/.img/auto.png" width="40%">
+                        
+                        <img src="/.img/agent.png" width="40%"><span>
+            </span><br><img src="/.img/world.png" width="40%">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <details class="scope">
+                 <summary>Markov Decision Process (MDP)</summary>
+                 
+                        <img src="/.img/markov.png" width="25%">
+                        <img src="/.img/chain.png" width="30%">
+                        <span>(γ left out here)</span>
+                    
+                 <hr>   <img src="/.img/bellman.png" width="40%"><br>
+                 <span style="font-size: 18">MDP</span><br>
+                 <img src="/.img/MDP.png" width="30%">
+                        <img src="/.img/return.png" width="40%">
+                        <div class="scope">
+                    tabular reinforcement learning stores Q in a table
+                </div><span>
+                </span>
+                        
+                        <div class="scope">
+                    deep reinforcement learning architecture outputs Q(a) data row for each input state s in a feed-forward network<br>
+                    * backpropagate TD-error δ
+                </div>
+                    
+                    
+                        
+                    
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                    <b>Temporal difference learning</b><br>
+                     Temporal difference error δ is r+γQ(s', a')-Q(s, a)<br>
+                    <span>simply factor update difference of Q with a learning rate</span><br>
+                    <div align="right"><details open=""><summary>derived equation</summary>
+                       <img src="/.img/equation.png" width="40%">
+                    </details></div>
+                    SARSA algorithm is on-policy and takes difference with Q of chosen action<br>
+                    Q-learning is off-policy and takes difference with greatest possible Q over possible next actions<br>
+                        
+                        <span>Actor-critic takes differences on V</span>
+                    
+                    
+                    <div align="right"><details open=""><summary>derived equation</summary>
+                       <img src="/.img/policy.png" width="40%">
+                    </details></div>
+                </div>
+                        <div class="scope">
+                    <img src="/.img/experience.png" width="40%">
+                </div>
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                    <b>goal-conditioned reinforcement learning</b><br>
+                    assume last state to be goal in <b>hindsight</b> of <b>experience replay</b><br>
+                    goal could also be a natural language sentence
+                </div>
+                    
+                        <div class="scope">
+                    Hierarchical Reinforcement Learning<br>
+                </div>
+                        <div class="scope">
+                    <img src="/.img/model.png" width="40%">
+                        <img src="/.img/rl.png" width="40%">
+                        <details class="scope" open="">
+                        <summary> MuZero </summary>
+                        <img src="/.img/muzero.png" width="40%">
+                        
+                        <img src="/.img/graph.png" width="25%">
+                    
+                    
+                    </details>
+                    
+                    
+                </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            </details>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+        </details>
+					
+						
+					
+					
+                        
+						
+						
+						
+						
+					
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="scope">
+            * approximating function targeting real, hidden data function<br>
+            * Risk function is averaged error/loss function<br>
+            * Loss function for classification problems is simply 0 for correct, 1 for incorrect predictions,<br>
+              as opposed to squared error for regression problems
+            
+            <div class="scope">
+                Asymptotic consistency of empirical risk function with true risk function <br>
+                means that they converge for large amounts of evaluated samples<br>
+                and is expected from learning algorithms
+            </div>
+            
+						<details class="scope"><summary>Generalization and VC-Dimension</summary>
+                
+                        <img src="/.img/undertraining.png" width="40%">
+                    
+                        <br>
+                    <img src="/.img/hypo.png" width="40%"><br>
+                <img src="/.img/jJHVK.png" width="40%"><br><br>
+                The VC dimension of H is the cardinality of the largest set S that can be fully represented by H (i.e. learned)<br>
+                <img src="/.img/X5yQA.png" width="40%">
+                    
+            </details>
+					          
+            
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+						<span><style>
+                td {
+                    vertical-align: top;
+                    width: 50%;
+                }
+            </style></span>
+					
+                    
+                    
+                    
+                    
+                    
+                        
+                    
+                        
+                        
+                        
+                        
+                        
+                        
+						
+						
+						
+						
+						
+						
+						<details class="scope"><summary>Structural Risk Minimization and Bayesian view</summary>
+                        
+                        <table><tbody><tr>
+                <td> <img src="/.img/Txyx1.png" width="80%"><br>
+                     <img src="/.img/whjB2.png" width="80%"></td>
+                <td>
+                     <img src="/.img/Ro1bv.png" width="80%"><br>
+                     
+                     <img src="/.img/kAG4A.png" width="80%"></td>
+                </tr></tbody></table>
+                    
+                    </details>
+					
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<details class="scope"><summary>Validating, Testing, and k-fold cross-validation </summary>          
+                    <b>determine accuracy rate by comparing model output to test data with its known labels</b><br>
+            
+                    
+                        <table><tbody><tr>
+                        <td><img src="/.img/evaluate.png" width="70%"></td>
+                        <td><img src="/.img/WJcg3.png" width="80%"></td>
+                    </tr></tbody></table>
+                    
+                        <span>(where the k models have different complexity levels for SRM)</span>
+                    
+            
+                    
+                        
+                        
+                        <div class="scope">
+                         k-fold cross-validation overcomes data usage inefficiency introduced by above partitioning<br>
+                         <div class="scope">applied for each SRM complexity level</div>
+                         
+                        
+                        <div class="scope">
+                              validation data is not needed for k-fold cross-validation<br>
+                              for regression problems, calculate mean square error over all model versions for each complexity level<br>
+                              then select complexity level with lowest MSE
+                              
+                        <br><img src="/.img/DN3QW.png" width="70%">
+                    
+                         </div>
+                    
+                    
+                    </div>
+                    
+                    
+                    
+            </details>
+					
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<details class="scope">
+               <summary>classifier evaluation</summary>
+               
+                        
+                        <table><tbody><tr>
+                    <td><img src="/.img/ziKek.png" width="80%">
+                    <img src="/.img/AgHGC.png" width="80%">
+                        
+                        
+                        <img src="/.img/q7oLH.png" width="60%">
+                    
+                    
+                    </td><td>
+                    
+                        
+                        <img src="/.img/YLxoV.png" width="80%">
+                        <img src="/.img/DeATF.png" width="70%">
+                    
+                    </td>
+                    
+                    
+                </tr></tbody></table>
+                        
+                        
+                        
+                        <div class="scope">
+                    
+                        <img src="/.img/gaXpP.png" width="40%">
+                    
+                        
+                        <br><span>As accuracy goes down, F-Score goes up. </span>
+                    <br>
+                        <span>
+                    First column shows that accuracy is at 90% even though the classifier simply labels all data with C2</span>
+                    
+                    
+                </div>
+                        
+                        
+                        
+                        
+                        <div class="scope">
+                    <img src="/.img/Vaolz.png" width="35%"><br>
+                    <img src="/.img/X09g4.png" width="40%">
+                        
+                        
+                        
+                        <img src="/.img/yiXFv.png" width="15%">
+                        
+                        
+                        <img src="/.img/hpVG9.png" width="15%">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            </details>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                         
+        </div>
+						
+						
+						
+						<details class="scope"><summary>Ensemble Learning</summary>
+            <details class="scope" open=""><summary>Achieving Diversity</summary>
+                <img src="/.img/SAEDK.png" width="40%">
+						<br>
+					
+						
+						<span>Random Subspace Method = Feature bagging</span>
+						
+					
+					
+					
+            </details>
+						
+						
+						
+						
+						
+						<div class="scope">
+                <img src="/.img/BAxsE.png" width="40%"><br>
+						
+						<img src="/.img/NsXam.png" width="40%">
+					<br>
+						
+						<div class="scope">
+                    <img src="/.img/DaFLs.png" width="40%">
+                </div>
+					
+					
+						
+						<img src="/.img/Uteuz.png" width="40%">
+					<br>
+					
+					
+                <br>
+                
+						
+					
+            </div><details class="scope"><summary> Bootstrap Aggregation (Bagging) </summary>
+                    Each learner is assigned a subset which is sampled from the data with replacement, thus having around 1/3 duplicates<br>
+                    
+						
+						
+						
+						
+						<img src="/.img/jzVTL.png" width="40%">
+					
+					
+					
+					
+					
+                </details><details class="scope"><summary>Boosting</summary>
+                    
+						
+						
+						
+						
+						
+						
+						<img src="/.img/ucbO8.png" width="60%">
+					
+					
+					<br><span>
+                    </span>
+						<details class="scope"> 
+                        
+                        
+                        
+                        <summary>Algorithm</summary>
+                    
+                    
+                    
+                    
+                        <img src="/.img/sOQJ6.png">
+                    </details>
+						<span>requires fewer data than bagging</span><br>
+						<span>
+                    requires models that have been trained</span>
+					
+					
+					
+					
+					
+					
+					
+                </details>
+						<img class="scope"><span>
+            </span><img src="/.img/ADwYF.png" width="40%"><span>
+            </span>
+					<details class="scope" open=""> 
+						<summary> Drop-out technique </summary><span>
+                </span><img src="/.img/U53yp.png" width="40%">
+						
+						<br><span>by removing neurons that encode certain necessary features, those features are transferred to other neurons, thus making network more general and robust against overfitting</span>
+					
+					
+					
+             
+        </details>
+						
+					
+					
+					
+					
+					
+					
+					
+        </details>
+						
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+                    
+    </details>
+					
+					
+					
+
+						<details class="scope" open="">
+        <summary>Interpret the model and draw conclusions</summary>
+        
+    </details>
+					
+</div>
+					
+
+<div class="scope">
+Feature Types<br>
+<div class="scope">-&gt; slides<br></div>
+<div class="scope">
+<span><div class="scope">static data</div></span>
+<details class="scope">
+<summary> <span>dynamic/temporal data</span><br> </summary>
+<div class="scope">
+classical univariate time-series problem,<br>
+where it is expected that the value of the variable X at a given time can be related to previous values.<br>
+<span>
+<div class="scope">
+<span style="font-size: 9px;">One of the most important steps in the preprocessing of raw, time-dependent data is the specification of a </span><br>
+window/time lag: the number of previous values that influence prediction<br>
+<span>
+<div class="scope"><img style="width: 251.159px; height: 153.183px;" src="/.img//2ckDW.png"><br></div>
+</span>
+.
+</div>
+<div class="scope">
+In practice, many older values of a feature may be historical relics that are no<br>
+longer relevant and less reliable and should not be used for analysis.
+</div>
+<details class="scope">
+<summary><img style="width: 171.2px; height: 53.1116px;" src="/.img//lw9Bf.png"> | e.g. 200 days MA for the DOW or NASDAQ stock market.<br> </summary>
+<div class="scope">The objective is to smooth neighboring time points by an MA to reduce the random variation and noise components</div>
+</details>
+</span>
+<span>
+<div class="scope">EMA: exponential moving average</div>
+<div class="scope"><font color="#FF0000">skip from p.40 until section 2.6</font><br></div>
+</span>
+</div>
+</details>
+</div>
+<div class="scope">
+high dimensional data<br>
+<div class="scope">effect on density</div>
+<div class="scope">large radius needed to enclose neighbors</div>
+<div class="scope">
+Almost every point is closer to an edge than to another sample point in a high-<br>
+dimensional space.
+</div>
+<div class="scope">Almost every point is an outlier.<br></div>
+</div>
+</div>
+						<details class="scope" open=""><summary>Case-based reasoning</summary>
+    <img src="/.img/case.png" width="40%">
+						<img src="/.img/reasoning.png" width="40%">
+					
+</details>
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<div class="scope">
+   <b>Maths</b>
+   
+                        
+   <div class="scope">
+      Covariance matrix<img src="/.img/6BG3v.png" width="20%">
+   </div>
+           
+   <div class="scope">
+      eigenvectors, eigenvalues
+   </div>                             
+   
+   vectors are orthonormal iff their matrix composition's transpose equals its inverse <br>
+         
+                        <a href="L05.html">L05.html</a>
+        
+</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
+<br>
+						
+						
+						
+						
+						<div align="left">
+                      <details open=""> <summary>chapters in literature:</summary>
+                        <div class="tab">
+                           • <b>3.3</b> Relief Algorithm - skipped
+                        </div>
+                        <div class="tab">
+                           • <b>3.4</b> ENTROPY MEASURE FOR RANKING FEATURES - skipped
+                        </div>
+                        <div class="tab">
+                           • <b>3.5</b> PCA <i> - taken from Weber's lecture</i>
+                        </div>
+                        <div class="tab">
+                           • <b>3.6 - 3.7</b> <i> - taken from Weber's lecture</i>
+                        </div>
+                        <div class="tab">
+                           • <b>3.8</b> - skipped
+                        </div>
+                        from chapter 4 on not following literature but slides
+                      </details>
+                    </div>
+					
+					
+					
+					
+					
+<p></p>
+<p>Solve Exercise "DecisionTree.notebook" from 12. May<br></p>
+
+Continue with "An additional single-dimensional method is Grubbs method"@p.44<br>
+						
+						<span>continue slide p. 42</span>
+					
+					
+
+						
+					
+
+
+						
+					
